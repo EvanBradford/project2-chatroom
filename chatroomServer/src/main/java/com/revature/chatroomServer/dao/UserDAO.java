@@ -1,4 +1,4 @@
-package com.naresh.bankingappspringdata.dao;
+package com.revature.chatroomServer.dao;
 
 import java.util.List;
 
@@ -7,10 +7,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.naresh.bankingappspringdata.model.User;
+import com.revature.chatroomServer.models.User;
+
 
 public interface UserDAO extends JpaRepository<User,Integer>{
 
+	@SuppressWarnings("unchecked")
 	User save(User user);
 
 	@Query("select u from User u")

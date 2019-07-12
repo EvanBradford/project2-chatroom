@@ -1,4 +1,4 @@
-package com.naresh.bankingappspringdata.controller;
+package com.revature.chatroomServer.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naresh.bankingappspringdata.model.User;
-import com.naresh.bankingappspringdata.service.UserService;
+import com.revature.chatroomServer.models.User;
+import com.revature.chatroomServer.service.UserService;
 
 @RestController
 @RequestMapping("users")

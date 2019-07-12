@@ -1,8 +1,9 @@
-package com.naresh.bankingappspringdata.service;
+package com.revature.chatroomServer.service;
 
 import java.util.List;
 
-import com.naresh.bankingappspringdata.model.User;
+import com.revature.chatroomServer.models.User;
+
 
 public interface UserService {
 
