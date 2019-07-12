@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AE_USERINFO")
-public class userinfo implements Serializable{
+public class Userinfo implements Serializable{
 	/**
 	 * 
 	 */
@@ -36,11 +36,11 @@ public class userinfo implements Serializable{
 	@Column(name = "PROFILEPIC")
 	private String profilePic;
 	
-	public userinfo() {
+	public Userinfo() {
 		;
 	}
 
-	public userinfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
+	public Userinfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
 		super();
 		this.infoid = infoid;
 		this.nickname = nickname;
