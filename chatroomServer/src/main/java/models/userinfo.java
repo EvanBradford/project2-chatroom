@@ -1,5 +1,7 @@
 package models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AE_USERINFO")
-public class userinfo {
+public class userinfo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8559524895599820600L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userid_gen")
 	@SequenceGenerator(name = "userid_gen", sequenceName = "AE_userinfo_seq", allocationSize = 1)
@@ -81,5 +88,4 @@ public class userinfo {
 	public void setProfilePic(String profilePic) {
 		this.profilePic = profilePic;
 	}
-	
 }
