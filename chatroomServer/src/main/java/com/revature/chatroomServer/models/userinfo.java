@@ -1,4 +1,4 @@
-package models;
+package com.revature.chatroomServer.models;
 
 import java.io.Serializable;
 
