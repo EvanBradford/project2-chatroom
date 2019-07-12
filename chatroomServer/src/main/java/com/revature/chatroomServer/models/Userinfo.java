@@ -19,8 +19,8 @@ public class Userinfo implements Serializable{
 	private static final long serialVersionUID = 8559524895599820600L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userid_gen")
-	@SequenceGenerator(name = "userid_gen", sequenceName = "AE_userinfo_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userinfoid_gen")
+	@SequenceGenerator(name = "userinfoid_gen", sequenceName = "AE_userinfo_seq", allocationSize = 1)
 	@Column(name = "INFOID")
 	private Integer infoid;
 	
