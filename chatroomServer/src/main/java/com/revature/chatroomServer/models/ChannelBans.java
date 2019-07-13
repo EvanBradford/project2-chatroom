@@ -24,45 +24,45 @@ public class ChannelBans implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ae_channelBanid_gen")
 	@SequenceGenerator(name = "ae_channelBanid_gen", sequenceName = "AE_BANNED_seq", allocationSize = 1)
 	@Column(name = "BANID")
-	private Integer BANID;
+	private Integer banId;
 	
 	@Column(name = "BANNEDUSERID")
-	private Integer BANNEDUSERID;
+	private Integer bannedUserId;
 	
 	@Column(name = "CHANNEL_BID")
-	private Integer CHANNEL_BID;
+	private Integer channel_Bid;
 
-	public Integer getBANID() {
-		return BANID;
+	public Integer getBanId() {
+		return banId;
 	}
 
-	public void setBANID(Integer bANID) {
-		BANID = bANID;
+	public void setBanId(Integer banId) {
+		this.banId = banId;
 	}
 
-	public Integer getBANNEDUSERID() {
-		return BANNEDUSERID;
+	public Integer getBannedUserId() {
+		return bannedUserId;
 	}
 
-	public void setBANNEDUSERID(Integer bANNEDUSERID) {
-		BANNEDUSERID = bANNEDUSERID;
+	public void setBannedUserId(Integer bannedUserId) {
+		this.bannedUserId = bannedUserId;
 	}
 
-	public Integer getCHANNEL_BID() {
-		return CHANNEL_BID;
+	public Integer getChannel_Bid() {
+		return channel_Bid;
 	}
 
-	public void setCHANNEL_BID(Integer cHANNEL_BID) {
-		CHANNEL_BID = cHANNEL_BID;
+	public void setChannel_Bid(Integer channel_Bid) {
+		this.channel_Bid = channel_Bid;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((BANID == null) ? 0 : BANID.hashCode());
-		result = prime * result + ((BANNEDUSERID == null) ? 0 : BANNEDUSERID.hashCode());
-		result = prime * result + ((CHANNEL_BID == null) ? 0 : CHANNEL_BID.hashCode());
+		result = prime * result + ((banId == null) ? 0 : banId.hashCode());
+		result = prime * result + ((bannedUserId == null) ? 0 : bannedUserId.hashCode());
+		result = prime * result + ((channel_Bid == null) ? 0 : channel_Bid.hashCode());
 		return result;
 	}
 
@@ -75,41 +75,41 @@ public class ChannelBans implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		ChannelBans other = (ChannelBans) obj;
-		if (BANID == null) {
-			if (other.BANID != null)
+		if (banId == null) {
+			if (other.banId != null)
 				return false;
-		} else if (!BANID.equals(other.BANID))
+		} else if (!banId.equals(other.banId))
 			return false;
-		if (BANNEDUSERID == null) {
-			if (other.BANNEDUSERID != null)
+		if (bannedUserId == null) {
+			if (other.bannedUserId != null)
 				return false;
-		} else if (!BANNEDUSERID.equals(other.BANNEDUSERID))
+		} else if (!bannedUserId.equals(other.bannedUserId))
 			return false;
-		if (CHANNEL_BID == null) {
-			if (other.CHANNEL_BID != null)
+		if (channel_Bid == null) {
+			if (other.channel_Bid != null)
 				return false;
-		} else if (!CHANNEL_BID.equals(other.CHANNEL_BID))
+		} else if (!channel_Bid.equals(other.channel_Bid))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "ChannelBans [BANID=" + BANID + ", BANNEDUSERID=" + BANNEDUSERID + ", CHANNEL_BID=" + CHANNEL_BID + "]";
+		return "ChannelBans [banId=" + banId + ", bannedUserId=" + bannedUserId + ", channel_Bid=" + channel_Bid + "]";
 	}
 
-	public ChannelBans(Integer bANID, Integer bANNEDUSERID, Integer cHANNEL_BID) {
+	public ChannelBans(Integer banId, Integer bannedUserId, Integer channel_Bid) {
 		super();
-		BANID = bANID;
-		BANNEDUSERID = bANNEDUSERID;
-		CHANNEL_BID = cHANNEL_BID;
+		this.banId = banId;
+		this.bannedUserId = bannedUserId;
+		this.channel_Bid = channel_Bid;
 	}
 
 	public ChannelBans() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 
 }

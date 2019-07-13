@@ -21,10 +21,10 @@ public class ChatroomServerApplicationTests {
 	
 	@Test
 	public void addUser() {
-		user.setADMINLVL(1);
-		user.setEMAIL("evan.bradford1@gmail.com");
-		user.setPASSWORD("12345");
-		user.setSTATUS(1);
+		user.setAdminLvl(1);
+		user.setEmail("evan.bradford1@gmail.com");
+		user.setPassword("12345");
+		user.setStatus(1);
 		
 		control.register(user);
 	}

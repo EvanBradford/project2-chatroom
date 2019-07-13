@@ -23,69 +23,69 @@ public class Comments implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ae_commentsid_gen")
 	@SequenceGenerator(name = "ae_commentsid_gen", sequenceName = "AE_COMMENTS_seq", allocationSize = 1)
 	@Column(name = "COMMENTID")
-	private Integer COMMENTID;
+	private Integer commentId;
 	
 	@Column(name = "CONTENT")
-	private String CONTENT;
+	private String content;
 	
 	@Column(name = "POSTDATE")
-	private String POSTDATE;
+	private String postDate;
 	
 	@Column(name = "USER_ID")
-	private String USER_ID;
+	private String user_Id;
 	
 	@Column(name = "CHANNEL_ID")
-	private Integer CHANNEL_ID;
+	private Integer channel_Id;
 
-	public Integer getCOMMENTID() {
-		return COMMENTID;
+	public Integer getCommentId() {
+		return commentId;
 	}
 
-	public void setCOMMENTID(Integer cOMMENTID) {
-		COMMENTID = cOMMENTID;
+	public void setCommentId(Integer commentId) {
+		this.commentId = commentId;
 	}
 
-	public String getCONTENT() {
-		return CONTENT;
+	public String getContent() {
+		return content;
 	}
 
-	public void setCONTENT(String cONTENT) {
-		CONTENT = cONTENT;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public String getPOSTDATE() {
-		return POSTDATE;
+	public String getPostDate() {
+		return postDate;
 	}
 
-	public void setPOSTDATE(String pOSTDATE) {
-		POSTDATE = pOSTDATE;
+	public void setPostDate(String postDate) {
+		this.postDate = postDate;
 	}
 
-	public String getUSER_ID() {
-		return USER_ID;
+	public String getUser_Id() {
+		return user_Id;
 	}
 
-	public void setUSER_ID(String uSER_ID) {
-		USER_ID = uSER_ID;
+	public void setUser_Id(String user_Id) {
+		this.user_Id = user_Id;
 	}
 
-	public Integer getCHANNEL_ID() {
-		return CHANNEL_ID;
+	public Integer getChannel_Id() {
+		return channel_Id;
 	}
 
-	public void setCHANNEL_ID(Integer cHANNEL_ID) {
-		CHANNEL_ID = cHANNEL_ID;
+	public void setChannel_Id(Integer channel_Id) {
+		this.channel_Id = channel_Id;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((CHANNEL_ID == null) ? 0 : CHANNEL_ID.hashCode());
-		result = prime * result + ((COMMENTID == null) ? 0 : COMMENTID.hashCode());
-		result = prime * result + ((CONTENT == null) ? 0 : CONTENT.hashCode());
-		result = prime * result + ((POSTDATE == null) ? 0 : POSTDATE.hashCode());
-		result = prime * result + ((USER_ID == null) ? 0 : USER_ID.hashCode());
+		result = prime * result + ((channel_Id == null) ? 0 : channel_Id.hashCode());
+		result = prime * result + ((commentId == null) ? 0 : commentId.hashCode());
+		result = prime * result + ((content == null) ? 0 : content.hashCode());
+		result = prime * result + ((postDate == null) ? 0 : postDate.hashCode());
+		result = prime * result + ((user_Id == null) ? 0 : user_Id.hashCode());
 		return result;
 	}
 
@@ -98,55 +98,54 @@ public class Comments implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Comments other = (Comments) obj;
-		if (CHANNEL_ID == null) {
-			if (other.CHANNEL_ID != null)
+		if (channel_Id == null) {
+			if (other.channel_Id != null)
 				return false;
-		} else if (!CHANNEL_ID.equals(other.CHANNEL_ID))
+		} else if (!channel_Id.equals(other.channel_Id))
 			return false;
-		if (COMMENTID == null) {
-			if (other.COMMENTID != null)
+		if (commentId == null) {
+			if (other.commentId != null)
 				return false;
-		} else if (!COMMENTID.equals(other.COMMENTID))
+		} else if (!commentId.equals(other.commentId))
 			return false;
-		if (CONTENT == null) {
-			if (other.CONTENT != null)
+		if (content == null) {
+			if (other.content != null)
 				return false;
-		} else if (!CONTENT.equals(other.CONTENT))
+		} else if (!content.equals(other.content))
 			return false;
-		if (POSTDATE == null) {
-			if (other.POSTDATE != null)
+		if (postDate == null) {
+			if (other.postDate != null)
 				return false;
-		} else if (!POSTDATE.equals(other.POSTDATE))
+		} else if (!postDate.equals(other.postDate))
 			return false;
-		if (USER_ID == null) {
-			if (other.USER_ID != null)
+		if (user_Id == null) {
+			if (other.user_Id != null)
 				return false;
-		} else if (!USER_ID.equals(other.USER_ID))
+		} else if (!user_Id.equals(other.user_Id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Comments [COMMENTID=" + COMMENTID + ", CONTENT=" + CONTENT + ", POSTDATE=" + POSTDATE + ", USER_ID="
-				+ USER_ID + ", CHANNEL_ID=" + CHANNEL_ID + "]";
+		return "Comments [commentId=" + commentId + ", content=" + content + ", postDate=" + postDate + ", user_Id="
+				+ user_Id + ", channel_Id=" + channel_Id + "]";
 	}
 
-	public Comments(Integer cOMMENTID, String cONTENT, String pOSTDATE, String uSER_ID, Integer cHANNEL_ID) {
+	public Comments(Integer commentId, String content, String postDate, String user_Id, Integer channel_Id) {
 		super();
-		COMMENTID = cOMMENTID;
-		CONTENT = cONTENT;
-		POSTDATE = pOSTDATE;
-		USER_ID = uSER_ID;
-		CHANNEL_ID = cHANNEL_ID;
+		this.commentId = commentId;
+		this.content = content;
+		this.postDate = postDate;
+		this.user_Id = user_Id;
+		this.channel_Id = channel_Id;
 	}
 
 	public Comments() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	
 
 }

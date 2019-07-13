@@ -23,45 +23,45 @@ public class ChannelUsers implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ae_channelUserid_gen")
 	@SequenceGenerator(name = "ae_channelUserid_gen", sequenceName = "AE_ALLOWED_seq", allocationSize = 1)
 	@Column(name = "ALLOWID")
-	private Integer ALLOWID;
+	private Integer allowID;
 	
 	@Column(name = "ALLOWEDID")
-	private Integer ALLOWEDID;
+	private Integer allowedId;
 	
 	@Column(name = "CHANNEL_AID")
-	private Integer CHANNEL_AID;
+	private Integer channel_AId;
 
-	public Integer getALLOWID() {
-		return ALLOWID;
+	public Integer getAllowID() {
+		return allowID;
 	}
 
-	public void setALLOWID(Integer aLLOWID) {
-		ALLOWID = aLLOWID;
+	public void setAllowID(Integer allowID) {
+		this.allowID = allowID;
 	}
 
-	public Integer getALLOWEDID() {
-		return ALLOWEDID;
+	public Integer getAllowedId() {
+		return allowedId;
 	}
 
-	public void setALLOWEDID(Integer aLLOWEDID) {
-		ALLOWEDID = aLLOWEDID;
+	public void setAllowedId(Integer allowedId) {
+		this.allowedId = allowedId;
 	}
 
-	public Integer getCHANNEL_AID() {
-		return CHANNEL_AID;
+	public Integer getChannel_AId() {
+		return channel_AId;
 	}
 
-	public void setCHANNEL_AID(Integer cHANNEL_AID) {
-		CHANNEL_AID = cHANNEL_AID;
+	public void setChannel_AId(Integer channel_AId) {
+		this.channel_AId = channel_AId;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ALLOWEDID == null) ? 0 : ALLOWEDID.hashCode());
-		result = prime * result + ((ALLOWID == null) ? 0 : ALLOWID.hashCode());
-		result = prime * result + ((CHANNEL_AID == null) ? 0 : CHANNEL_AID.hashCode());
+		result = prime * result + ((allowID == null) ? 0 : allowID.hashCode());
+		result = prime * result + ((allowedId == null) ? 0 : allowedId.hashCode());
+		result = prime * result + ((channel_AId == null) ? 0 : channel_AId.hashCode());
 		return result;
 	}
 
@@ -74,43 +74,41 @@ public class ChannelUsers implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		ChannelUsers other = (ChannelUsers) obj;
-		if (ALLOWEDID == null) {
-			if (other.ALLOWEDID != null)
+		if (allowID == null) {
+			if (other.allowID != null)
 				return false;
-		} else if (!ALLOWEDID.equals(other.ALLOWEDID))
+		} else if (!allowID.equals(other.allowID))
 			return false;
-		if (ALLOWID == null) {
-			if (other.ALLOWID != null)
+		if (allowedId == null) {
+			if (other.allowedId != null)
 				return false;
-		} else if (!ALLOWID.equals(other.ALLOWID))
+		} else if (!allowedId.equals(other.allowedId))
 			return false;
-		if (CHANNEL_AID == null) {
-			if (other.CHANNEL_AID != null)
+		if (channel_AId == null) {
+			if (other.channel_AId != null)
 				return false;
-		} else if (!CHANNEL_AID.equals(other.CHANNEL_AID))
+		} else if (!channel_AId.equals(other.channel_AId))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "ChannelUsers [ALLOWID=" + ALLOWID + ", ALLOWEDID=" + ALLOWEDID + ", CHANNEL_AID=" + CHANNEL_AID + "]";
+		return "ChannelUsers [allowID=" + allowID + ", allowedId=" + allowedId + ", channel_AId=" + channel_AId + "]";
 	}
 
-	public ChannelUsers(Integer aLLOWID, Integer aLLOWEDID, Integer cHANNEL_AID) {
+	public ChannelUsers(Integer allowID, Integer allowedId, Integer channel_AId) {
 		super();
-		ALLOWID = aLLOWID;
-		ALLOWEDID = aLLOWEDID;
-		CHANNEL_AID = cHANNEL_AID;
+		this.allowID = allowID;
+		this.allowedId = allowedId;
+		this.channel_AId = channel_AId;
 	}
 
 	public ChannelUsers() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
 	
 
 }

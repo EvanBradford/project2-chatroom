@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "AE_USERS")
 public class User implements Serializable {
-
 	/**
 	 * 
 	 */
@@ -26,16 +25,16 @@ public class User implements Serializable {
 	private Integer AEID;
 
 	@Column(name = "EMAIL")
-	private String EMAIL;
+	private String email;
 
 	@Column(name = "PASSWORD")
-	private String PASSWORD;
+	private String password;
 
 	@Column(name = "ADMINLVL")
-	private Integer ADMINLVL;
+	private Integer adminLvl;
 	
 	@Column(name = "STATUS")
-	private Integer STATUS;
+	private Integer status;
 
 	public Integer getAEID() {
 		return AEID;
@@ -45,47 +44,47 @@ public class User implements Serializable {
 		AEID = aEID;
 	}
 
-	public String getEMAIL() {
-		return EMAIL;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEMAIL(String eMAIL) {
-		EMAIL = eMAIL;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getPASSWORD() {
-		return PASSWORD;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPASSWORD(String pASSWORD) {
-		PASSWORD = pASSWORD;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Integer getADMINLVL() {
-		return ADMINLVL;
+	public Integer getAdminLvl() {
+		return adminLvl;
 	}
 
-	public void setADMINLVL(Integer aDMINLVL) {
-		ADMINLVL = aDMINLVL;
+	public void setAdminLvl(Integer adminLvl) {
+		this.adminLvl = adminLvl;
 	}
 
-	public Integer getSTATUS() {
-		return STATUS;
+	public Integer getStatus() {
+		return status;
 	}
 
-	public void setSTATUS(Integer sTATUS) {
-		STATUS = sTATUS;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ADMINLVL == null) ? 0 : ADMINLVL.hashCode());
 		result = prime * result + ((AEID == null) ? 0 : AEID.hashCode());
-		result = prime * result + ((EMAIL == null) ? 0 : EMAIL.hashCode());
-		result = prime * result + ((PASSWORD == null) ? 0 : PASSWORD.hashCode());
-		result = prime * result + ((STATUS == null) ? 0 : STATUS.hashCode());
+		result = prime * result + ((adminLvl == null) ? 0 : adminLvl.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
 
@@ -98,54 +97,54 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (ADMINLVL == null) {
-			if (other.ADMINLVL != null)
-				return false;
-		} else if (!ADMINLVL.equals(other.ADMINLVL))
-			return false;
 		if (AEID == null) {
 			if (other.AEID != null)
 				return false;
 		} else if (!AEID.equals(other.AEID))
 			return false;
-		if (EMAIL == null) {
-			if (other.EMAIL != null)
+		if (adminLvl == null) {
+			if (other.adminLvl != null)
 				return false;
-		} else if (!EMAIL.equals(other.EMAIL))
+		} else if (!adminLvl.equals(other.adminLvl))
 			return false;
-		if (PASSWORD == null) {
-			if (other.PASSWORD != null)
+		if (email == null) {
+			if (other.email != null)
 				return false;
-		} else if (!PASSWORD.equals(other.PASSWORD))
+		} else if (!email.equals(other.email))
 			return false;
-		if (STATUS == null) {
-			if (other.STATUS != null)
+		if (password == null) {
+			if (other.password != null)
 				return false;
-		} else if (!STATUS.equals(other.STATUS))
+		} else if (!password.equals(other.password))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [AEID=" + AEID + ", EMAIL=" + EMAIL + ", PASSWORD=" + PASSWORD + ", ADMINLVL=" + ADMINLVL
-				+ ", STATUS=" + STATUS + "]";
+		return "User [AEID=" + AEID + ", email=" + email + ", password=" + password + ", adminLvl=" + adminLvl
+				+ ", status=" + status + "]";
 	}
 
-	public User(Integer aEID, String eMAIL, String pASSWORD, Integer aDMINLVL, Integer sTATUS) {
+	public User(Integer aEID, String email, String password, Integer adminLvl, Integer status) {
 		super();
 		AEID = aEID;
-		EMAIL = eMAIL;
-		PASSWORD = pASSWORD;
-		ADMINLVL = aDMINLVL;
-		STATUS = sTATUS;
+		this.email = email;
+		this.password = password;
+		this.adminLvl = adminLvl;
+		this.status = status;
 	}
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+
 
 }
