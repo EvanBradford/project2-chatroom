@@ -52,7 +52,7 @@ private static Message prepareMassage(Session session, String myAccountEmail, St
 		//message.setText("Hey there, your ");
 		return message;
 	} catch(Exception e) {
-		Logger.getLogger(JavaMailUtil.class.getName(), null).log(Level.SEVERE, null);
+	//	Logger.getLogger(JavaMailUtil.class.getName(), null).log(Level.SEVERE, null);
 	}
 	return null;
 }}
