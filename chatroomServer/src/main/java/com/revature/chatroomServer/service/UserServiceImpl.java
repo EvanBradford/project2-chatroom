@@ -13,7 +13,7 @@ import com.revature.chatroomServer.models.User;
 
 @Service
 public class UserServiceImpl implements UserService {
-
+	
 	@Autowired
 	private UserDAO userDAO;// = new UserDAO();
 	
