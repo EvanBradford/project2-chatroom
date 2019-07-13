@@ -1,13 +1,13 @@
 package com.revature.chatroomServer;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import com.revature.chatroomServer.controller.UserController;
-import com.revature.chatroomServer.models.User;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.test.context.junit4.SpringRunner;
+//
+//import com.revature.chatroomServer.controller.UserController;
+//import com.revature.chatroomServer.models.User;
 
 /*
 @SpringBootTest
