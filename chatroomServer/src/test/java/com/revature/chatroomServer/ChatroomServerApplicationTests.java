@@ -9,8 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.revature.chatroomServer.controller.UserController;
 import com.revature.chatroomServer.models.User;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
+@RunWith(SpringRunner.class)
 public class ChatroomServerApplicationTests {
 
 	@Autowired

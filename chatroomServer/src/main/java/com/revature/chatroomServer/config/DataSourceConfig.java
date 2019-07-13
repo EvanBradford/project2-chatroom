@@ -48,5 +48,4 @@ public class DataSourceConfig {
 
 		return transactionManager;
 	}
-
 }

@@ -12,7 +12,6 @@ import com.revature.chatroomServer.models.User;
 
 public interface UserDAO extends JpaRepository<User,Integer>{
 
-	@SuppressWarnings("unchecked")
 	User save(User user);
 
 	@Query("select u from User u")
@@ -27,5 +26,4 @@ public interface UserDAO extends JpaRepository<User,Integer>{
 	
 	@Query("select u from User u where u.email = :email and u.password = :password")
 	User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
-
 }

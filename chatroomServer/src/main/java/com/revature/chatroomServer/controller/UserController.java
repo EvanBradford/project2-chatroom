@@ -16,7 +16,7 @@ import com.revature.chatroomServer.models.User;
 import com.revature.chatroomServer.service.UserService;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("User")
 public class UserController {
 
 	@Autowired
@@ -27,7 +27,6 @@ public class UserController {
 		System.out.println("UserController->save");
 		userService.registerUser(user);
 	}
-	
 
 	@PutMapping("/{id}")
 	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody User user) {
