@@ -1,4 +1,4 @@
-package com.naresh.bankingappspringdata.service;
+package com.revature.chatroomServer.service;
 
 import java.util.List;
 
@@ -7,8 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.naresh.bankingappspringdata.dao.UserDAO;
-import com.naresh.bankingappspringdata.model.User;
+import com.revature.chatroomServer.dao.UserDAO;
+import com.revature.chatroomServer.models.User;
+
 
 @Service
 public class UserServiceImpl implements UserService {

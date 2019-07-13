@@ -12,15 +12,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AE_USERINFO")
-public class userinfo implements Serializable{
+public class Userinfo implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8559524895599820600L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userid_gen")
-	@SequenceGenerator(name = "userid_gen", sequenceName = "AE_userinfo_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userinfoid_gen")
+	@SequenceGenerator(name = "userinfoid_gen", sequenceName = "AE_userinfo_seq", allocationSize = 1)
 	@Column(name = "INFOID")
 	private Integer infoid;
 	
@@ -36,11 +36,11 @@ public class userinfo implements Serializable{
 	@Column(name = "PROFILEPIC")
 	private String profilePic;
 	
-	public userinfo() {
+	public Userinfo() {
 		;
 	}
 
-	public userinfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
+	public Userinfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
 		super();
 		this.infoid = infoid;
 		this.nickname = nickname;

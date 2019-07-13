@@ -2,15 +2,31 @@ package com.revature.chatroomServer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.revature.chatroomServer.controller.UserController;
+import com.revature.chatroomServer.models.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ChatroomServerApplicationTests {
 
+	@Autowired
+	private User user;
+	
+	@Autowired
+	UserController control;
+	
 	@Test
-	public void contextLoads() {
+	public void addUser() {
+		user.setADMINLVL(1);
+		user.setEMAIL("evan.bradford1@gmail.com");
+		user.setPASSWORD("12345");
+		user.setSTATUS(1);
+		
+		control.register(user);
 	}
 
 }
