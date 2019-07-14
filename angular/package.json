@@ -1,0 +1,28 @@
+{
+  "name": "ae_chatroom",
+  "version": "1.0.0",
+  "description": "this new way to think about a chatroom for a simple class project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/akilisosa/chatroomFrontend.git"
+  },
+  "keywords": [
+    "chatroom",
+    "akili",
+    "evan",
+    "team1"
+  ],
+  "author": "Akili Sosa, Evan Bradford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akilisosa/chatroomFrontend/issues"
+  },
+  "homepage": "https://github.com/akilisosa/chatroomFrontend#readme",
+  "dependencies": {
+    "ajv": "^6.9.1"
+  }
+}
