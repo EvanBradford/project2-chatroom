@@ -19,11 +19,8 @@ public class CommentServiceImpl implements CommentService{
 
 	@Transactional
 	public void registerComment(Comments comment) {
-		commentDAO.save(comment);
-		
+		commentDAO.save(comment);	
 	}
-
-	
 
 
 	@Transactional
