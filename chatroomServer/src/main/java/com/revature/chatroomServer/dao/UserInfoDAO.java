@@ -24,4 +24,8 @@ public interface UserInfoDAO extends JpaRepository<User,Integer>{
 	@Modifying
 	@Query("delete from UserInfo where infoid = :userId")
 	void delete(@Param("userId") Integer id);
+	
+	@Modifying
+	@Query("update User u set u.nickname = :nickname and u.birthdate = :birthdate and u.region = :region and u.profilePic = :profilePic where id = :infoId")
+	User update(@Param("infoId") Integer id, @Param("nickname") String nickname, @Param("birthdate") String password, @Param("region") String region, @Param("profilePic") String profilePic);
 }
