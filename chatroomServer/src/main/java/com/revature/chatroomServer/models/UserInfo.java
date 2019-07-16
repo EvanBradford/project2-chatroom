@@ -1,7 +1,6 @@
 package com.revature.chatroomServer.models;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AE_USERINFO")
-public class Userinfo implements Serializable{
+public class UserInfo implements Serializable{
 	/**
 	 * 
 	 */
@@ -36,11 +35,11 @@ public class Userinfo implements Serializable{
 	@Column(name = "PROFILEPIC")
 	private String profilePic;
 	
-	public Userinfo() {
+	public UserInfo() {
 		;
 	}
 
-	public Userinfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
+	public UserInfo(Integer infoid, String nickname, String birthdate, String region, String profilePic) {
 		super();
 		this.infoid = infoid;
 		this.nickname = nickname;

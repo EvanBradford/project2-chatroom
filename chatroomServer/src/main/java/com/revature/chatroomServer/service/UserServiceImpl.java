@@ -21,7 +21,6 @@ public class UserServiceImpl implements UserService {
 	public void registerUser(User user) {
 		userDAO.save(user);
 	}
-
 	@Transactional
 	public List<User> list() {
 		return userDAO.list();
@@ -36,10 +35,8 @@ public class UserServiceImpl implements UserService {
 	public void delete(Integer id) {
 		userDAO.delete(id);
 	}
-
 	@Override
 	public void update(User user) {
 		userDAO.save(user);
 	}
-
 }
