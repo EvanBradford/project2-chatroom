@@ -10,6 +10,8 @@ export class MainChatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    
   }
 
 }
