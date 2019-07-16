@@ -13,7 +13,6 @@
 //@SpringBootTest
 //@RunWith(SpringRunner.class)
 //public class ChatroomServerApplicationTests {
-<<<<<<< HEAD
 //	public static void main(String[] args) {
 //		System.out.println("you did a successful install build finally");
 //	}
@@ -23,19 +22,4 @@
 //	user.setEmail("evan.bradford1@gmail.com"); user.setPassword("12345");
 //	user.setStatus(1);
 //	control.register(user); }
-=======
-//
-//	
-//	  @Autowired private User user;
-//	  
-//	  @Autowired UserController control;
-//	  
-//	  @Test public void addUser() { user.setAdminLvl(1);
-//	  user.setEmail("evan.bradford1@gmail.com"); user.setPassword("12345");
-//	  user.setStatus(1);
-//	  
-//	  control.register(user); }
-//	 
-//
->>>>>>> sosa
 //}
