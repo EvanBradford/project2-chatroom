@@ -14,29 +14,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.chatroomServer.models.Comments;
-import com.revature.chatroomServer.models.User;
 import com.revature.chatroomServer.service.CommentService;
-import com.revature.chatroomServer.service.UserService;
 
 @RestController
 @RequestMapping("Comment")
 public class CommentController {
 	
-@Autowired
-private CommentService commentService;
-
-@PostMapping()
-public @ResponseBody void register(@RequestBody Comments comment) {
-	System.out.println("UserController->save");
-	commentService.registerComment(comment);
-}
-
-@PutMapping("/{id}")
-public @ResponseBody void update(@PathVariable("id") Integer id, @RequestBody Comments comment){
-	System.out.println("comment Controller-> update" +id);
-	commentService.update(comment);
-}
-
+	@Autowired
+	private CommentService commentService;
+	
+	@PostMapping()
+	public @ResponseBody void register(@RequestBody Comments comment) {
+		System.out.println("UserController->save");
+		commentService.registerComment(comment);
+	}
+	
+	@PutMapping("/{id}")
+	public @ResponseBody void update(@PathVariable("id") Integer id, @RequestBody Comments comment){
+		System.out.println("comment Controller-> update" +id);
+		commentService.update(comment);
+	}
 
 	@GetMapping()
 	public List<Comments> list() {
