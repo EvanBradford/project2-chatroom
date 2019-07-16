@@ -24,45 +24,45 @@ public class Channel implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ae_channelid_gen")
 	@SequenceGenerator(name = "ae_channelid_gen", sequenceName = "AE_CHANNEL_seq", allocationSize = 1)
 	@Column(name = "CHANNELID")
-	private Integer CHANNELID;
+	private Integer channelId;
 	
 	@Column(name = "CHANNELNAME")
-	private String CHANNELNAME;
+	private String chanelName;
 	
 	@Column(name = "CHANNETYPE")
-	private String CHANNELTYPE;
+	private String channelType;
 
-	public Integer getCHANNELID() {
-		return CHANNELID;
+	public Integer getChannelId() {
+		return channelId;
 	}
 
-	public void setCHANNELID(Integer cHANNELID) {
-		CHANNELID = cHANNELID;
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
 	}
 
-	public String getCHANNELNAME() {
-		return CHANNELNAME;
+	public String getChanelName() {
+		return chanelName;
 	}
 
-	public void setCHANNELNAME(String cHANNELNAME) {
-		CHANNELNAME = cHANNELNAME;
+	public void setChanelName(String chanelName) {
+		this.chanelName = chanelName;
 	}
 
-	public String getCHANNELTYPE() {
-		return CHANNELTYPE;
+	public String getChannelType() {
+		return channelType;
 	}
 
-	public void setCHANNELTYPE(String cHANNELTYPE) {
-		CHANNELTYPE = cHANNELTYPE;
+	public void setChannelType(String channelType) {
+		this.channelType = channelType;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((CHANNELID == null) ? 0 : CHANNELID.hashCode());
-		result = prime * result + ((CHANNELNAME == null) ? 0 : CHANNELNAME.hashCode());
-		result = prime * result + ((CHANNELTYPE == null) ? 0 : CHANNELTYPE.hashCode());
+		result = prime * result + ((chanelName == null) ? 0 : chanelName.hashCode());
+		result = prime * result + ((channelId == null) ? 0 : channelId.hashCode());
+		result = prime * result + ((channelType == null) ? 0 : channelType.hashCode());
 		return result;
 	}
 
@@ -75,35 +75,34 @@ public class Channel implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Channel other = (Channel) obj;
-		if (CHANNELID == null) {
-			if (other.CHANNELID != null)
+		if (chanelName == null) {
+			if (other.chanelName != null)
 				return false;
-		} else if (!CHANNELID.equals(other.CHANNELID))
+		} else if (!chanelName.equals(other.chanelName))
 			return false;
-		if (CHANNELNAME == null) {
-			if (other.CHANNELNAME != null)
+		if (channelId == null) {
+			if (other.channelId != null)
 				return false;
-		} else if (!CHANNELNAME.equals(other.CHANNELNAME))
+		} else if (!channelId.equals(other.channelId))
 			return false;
-		if (CHANNELTYPE == null) {
-			if (other.CHANNELTYPE != null)
+		if (channelType == null) {
+			if (other.channelType != null)
 				return false;
-		} else if (!CHANNELTYPE.equals(other.CHANNELTYPE))
+		} else if (!channelType.equals(other.channelType))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Channel [CHANNELID=" + CHANNELID + ", CHANNELNAME=" + CHANNELNAME + ", CHANNELTYPE=" + CHANNELTYPE
-				+ "]";
+		return "Channel [channelId=" + channelId + ", chanelName=" + chanelName + ", channelType=" + channelType + "]";
 	}
 
-	public Channel(Integer cHANNELID, String cHANNELNAME, String cHANNELTYPE) {
+	public Channel(Integer channelId, String chanelName, String channelType) {
 		super();
-		CHANNELID = cHANNELID;
-		CHANNELNAME = cHANNELNAME;
-		CHANNELTYPE = cHANNELTYPE;
+		this.channelId = channelId;
+		this.chanelName = chanelName;
+		this.channelType = channelType;
 	}
 
 	public Channel() {
@@ -111,7 +110,6 @@ public class Channel implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	
 	
 

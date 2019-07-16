@@ -25,28 +25,28 @@ public class BlockedByUser implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ae_block_gen")
 	@SequenceGenerator(name = "ae_block_gen", sequenceName = "AE_block_seq", allocationSize = 1)
 	@Column(name = "BLOCKID")
-	private Integer BLOCKID;
+	private Integer blockId;
 	
 	@Column(name = "BLOCKEDUSERID")
-	private Integer BLOCKEDUSERID;
+	private Integer blockUserId;
 	
 	@Column(name = "AE_ID")
 	private Integer AE_ID;
 
-	public Integer getBLOCKID() {
-		return BLOCKID;
+	public Integer getBlockId() {
+		return blockId;
 	}
 
-	public void setBLOCKID(Integer bLOCKID) {
-		BLOCKID = bLOCKID;
+	public void setBlockId(Integer blockId) {
+		this.blockId = blockId;
 	}
 
-	public Integer getBLOCKEDUSERID() {
-		return BLOCKEDUSERID;
+	public Integer getBlockUserId() {
+		return blockUserId;
 	}
 
-	public void setBLOCKEDUSERID(Integer bLOCKEDUSERID) {
-		BLOCKEDUSERID = bLOCKEDUSERID;
+	public void setBlockUserId(Integer blockUserId) {
+		this.blockUserId = blockUserId;
 	}
 
 	public Integer getAE_ID() {
@@ -56,17 +56,17 @@ public class BlockedByUser implements Serializable {
 	public void setAE_ID(Integer aE_ID) {
 		AE_ID = aE_ID;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((AE_ID == null) ? 0 : AE_ID.hashCode());
-		result = prime * result + ((BLOCKEDUSERID == null) ? 0 : BLOCKEDUSERID.hashCode());
-		result = prime * result + ((BLOCKID == null) ? 0 : BLOCKID.hashCode());
+		result = prime * result + ((blockId == null) ? 0 : blockId.hashCode());
+		result = prime * result + ((blockUserId == null) ? 0 : blockUserId.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -81,28 +81,28 @@ public class BlockedByUser implements Serializable {
 				return false;
 		} else if (!AE_ID.equals(other.AE_ID))
 			return false;
-		if (BLOCKEDUSERID == null) {
-			if (other.BLOCKEDUSERID != null)
+		if (blockId == null) {
+			if (other.blockId != null)
 				return false;
-		} else if (!BLOCKEDUSERID.equals(other.BLOCKEDUSERID))
+		} else if (!blockId.equals(other.blockId))
 			return false;
-		if (BLOCKID == null) {
-			if (other.BLOCKID != null)
+		if (blockUserId == null) {
+			if (other.blockUserId != null)
 				return false;
-		} else if (!BLOCKID.equals(other.BLOCKID))
+		} else if (!blockUserId.equals(other.blockUserId))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "BlockedByUser [BLOCKID=" + BLOCKID + ", BLOCKEDUSERID=" + BLOCKEDUSERID + ", AE_ID=" + AE_ID + "]";
+		return "BlockedByUser [blockId=" + blockId + ", blockUserId=" + blockUserId + ", AE_ID=" + AE_ID + "]";
 	}
 
-	public BlockedByUser(Integer bLOCKID, Integer bLOCKEDUSERID, Integer aE_ID) {
+	public BlockedByUser(Integer blockId, Integer blockUserId, Integer aE_ID) {
 		super();
-		BLOCKID = bLOCKID;
-		BLOCKEDUSERID = bLOCKEDUSERID;
+		this.blockId = blockId;
+		this.blockUserId = blockUserId;
 		AE_ID = aE_ID;
 	}
 
@@ -110,8 +110,7 @@ public class BlockedByUser implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	
 	
 }
