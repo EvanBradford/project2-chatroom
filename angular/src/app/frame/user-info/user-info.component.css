@@ -2,3 +2,15 @@
     background-color:#fcf7f2;
     height:100%;
 }
+
+#loginbtn{
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
+.inputs{
+margin-top:0;
+  width:90%;
+  margin:5%
+
+}

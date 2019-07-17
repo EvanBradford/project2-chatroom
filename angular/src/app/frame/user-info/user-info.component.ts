@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LogginService } from '../../services/loggin.service';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-user-info',
@@ -9,6 +10,7 @@ import { LogginService } from '../../services/loggin.service';
 export class UserInfoComponent implements OnInit {
 
   constructor(private loginService: LogginService) { }
+ user: User;
 
 result: any;
   @Input()
@@ -17,12 +19,13 @@ result: any;
   @Input()
   password: string;
 
-  login (){
+  login () {
     console.log("username", this.username);
     console.log("password", this.password);
     this.loginService.login(this.username, this.password).subscribe((res)=>{
       this.result = res;
-    })
+    //  let user = JSON.parse(res);
+    console.log(res);    });
   }
   ngOnInit() {
   }

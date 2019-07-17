@@ -1,9 +1,11 @@
-<div id="userInfo">
-<form>
+<div id="userInfo" >
+
   <div class="from-group">
-    <label for="usernameField">username</label>    
-      <input type="text" id="usernameField" class="form-control" [(ngModel)] = "this.username">
-      <input type="text" id="passwordField" class="form-control" [(ngModel)] = "this.password">
+    <label for="usernameField">username:</label>    
+      <input style="margin-top: 0;" type="text" id="usernameField" class="form-control inputs" [(ngModel)] = "this.username">
+      <label for="passwordField">password:</label>
+      <input style="margin-top:0"type="password" id="passwordField" class="form-control inputs" [(ngModel)] = "this.password">
+      <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
   </div>
-</form>
+
 </div>

@@ -7,7 +7,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class LogginService {
 
-serverUrl="whatever port your spring is running on";
+serverUrl="https://localhost:8055"; 
 
   constructor(private http:HttpClient) { }
 
@@ -18,10 +18,10 @@ serverUrl="whatever port your spring is running on";
 
   let params = new HttpParams()
   .set('username', username)
-  .set('password', password);
+  .set('password', password);//these parameters are going to be pushed into the backend
 
 
-  return this.http.post(this.serverUrl + "users/login.do" , params );
+  return this.http.post(this.serverUrl + "User/login.do" , params );
   }
 
 }

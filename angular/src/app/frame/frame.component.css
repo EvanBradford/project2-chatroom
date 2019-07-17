@@ -4,10 +4,19 @@
     --main-myInfo-border:#4a8ec7;
     --main-privateMessage-border:	#c74a4f;
   }
+body{
+    margin:auto;
+}
+  .container{
+      margin:0;
+      width:100%;
+      
+  }
 
 #chatroom{
     border-style: solid; 
     border-color:#4ac7c2;
+    border-width:3px;
     padding:0;
 }
 
@@ -15,6 +24,7 @@
     border-style: solid; 
     border-color:#4ac784;
     padding:0;
+    border-width:3px;
 }
 
 #myInfo{
@@ -22,10 +32,12 @@
     border-width: 2px;
     border-color:#4a8ec7;
     padding:0;
+    border-width:3px;
 }
 
 #privateMessage{
     border-style: solid; 
     border-color:#c74a4f;
     padding:0;
+    border-width:3px;
 }

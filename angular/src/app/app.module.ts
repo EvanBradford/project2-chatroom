@@ -11,6 +11,7 @@ import { UserInfoComponent } from './frame/user-info/user-info.component';
 import { FriendsComponent } from './frame/friends/friends.component';
 import { PrivateMessageComponent } from './frame/private-message/private-message.component';
 import { ChatDetailComponent } from './frame/main-chat/chat-detail/chat-detail.component';
+import { ConfigComponent } from './config/config/config.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChatDetailComponent } from './frame/main-chat/chat-detail/chat-detail.c
     UserInfoComponent,
     FriendsComponent,
     PrivateMessageComponent,
-    ChatDetailComponent
+    ChatDetailComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
