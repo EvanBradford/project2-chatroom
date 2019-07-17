@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.JsonObject;
 import com.revature.chatroomServer.models.User;
 import com.revature.chatroomServer.service.UserService;
 
@@ -44,6 +46,15 @@ public class UserController {
 	public User findOne(@PathVariable("id") Integer id) {
 		User user = userService.findOne(id);
 		return user;
+	}
+	
+	@PostMapping("/login.do")
+	public User findByEmailAndPassword(@RequestParam("username")String email,@RequestParam("password") String password) {
+		User user = userService.findByEmailAndPassword(email, password);
+	
+		
+		return user;
+		
 	}
 
 	@DeleteMapping("/{id}")

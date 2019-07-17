@@ -42,4 +42,11 @@ public class UserServiceImpl implements UserService {
 		userDAO.save(user);
 	}
 
+	@Transactional
+	public User findByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		User user = userDAO.findByEmailAndPassword(email, password);
+		return user;
+	}
+
 }
