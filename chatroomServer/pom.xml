@@ -49,11 +49,7 @@
 			<version>5.4.3.Final</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<version>12.1.0</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
@@ -69,13 +65,9 @@
 		<dependency>
 
 <groupId>com.oracle</groupId>
-
 <artifactId>ojdbc8</artifactId>
-
 <version>12.1.0</version>
-
 <scope>system</scope>
-
 <systemPath>${basedir}/lib/ojdbc8.jar</systemPath>
 
 </dependency>

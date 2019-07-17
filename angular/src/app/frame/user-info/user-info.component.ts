@@ -12,13 +12,13 @@ export class UserInfoComponent implements OnInit {
 
 result: any;
   @Input()
-  username:string;
+  username: string;
 
   @Input()
   password: string;
 
   login (){
-    console.log("username ", this.username);
+    console.log("username", this.username);
     console.log("password", this.password);
     this.loginService.login(this.username, this.password).subscribe((res)=>{
       this.result = res;

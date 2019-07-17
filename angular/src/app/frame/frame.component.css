@@ -1,0 +1,31 @@
+:root {
+    --main-chat-border:	#4ac7c2; 
+    --main-friends-border:	#4ac784;
+    --main-myInfo-border:#4a8ec7;
+    --main-privateMessage-border:	#c74a4f;
+  }
+
+#chatroom{
+    border-style: solid; 
+    border-color:#4ac7c2;
+    padding:0;
+}
+
+#friends{
+    border-style: solid; 
+    border-color:#4ac784;
+    padding:0;
+}
+
+#myInfo{
+    border-style: solid; 
+    border-width: 2px;
+    border-color:#4a8ec7;
+    padding:0;
+}
+
+#privateMessage{
+    border-style: solid; 
+    border-color:#c74a4f;
+    padding:0;
+}
