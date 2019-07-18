@@ -16,7 +16,7 @@ import com.revature.chatroomServer.models.ChannelUsers;
 import com.revature.chatroomServer.service.ChannelUsersService;
 
 @RestController
-@RequestMapping("User")
+@RequestMapping("ChannelUsers")
 public class ChannelUsersController {
 
 	@Autowired

@@ -17,7 +17,7 @@ import com.revature.chatroomServer.models.Comments;
 import com.revature.chatroomServer.service.CommentService;
 
 @RestController
-@RequestMapping("Comment")
+@RequestMapping("Comments")
 public class CommentController {
 	
 	@Autowired
