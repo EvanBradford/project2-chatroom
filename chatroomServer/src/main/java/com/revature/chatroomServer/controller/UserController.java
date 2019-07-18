@@ -18,7 +18,7 @@ import com.revature.chatroomServer.models.User;
 import com.revature.chatroomServer.service.UserService;
 
 @RestController
-@RequestMapping("Users")
+@RequestMapping("User")
 public class UserController {
 
 	@Autowired
