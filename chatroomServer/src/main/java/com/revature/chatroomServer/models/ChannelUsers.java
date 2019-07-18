@@ -25,7 +25,10 @@ public class ChannelUsers implements Serializable{
 	@Column(name = "ALLOWID")
 	private Integer allowID;
 	
-	@Column(name = "ALLOWEDID")
+	@Column(name = "BANSTATUS")
+	private Integer banStatus;
+	
+	@Column(name = "USER_AID")
 	private Integer allowedId;
 	
 	@Column(name = "CHANNEL_AID")

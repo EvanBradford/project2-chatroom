@@ -25,7 +25,6 @@ public interface UserDAO extends JpaRepository<User,Integer>{
 	@Query("delete from User where id = :userId")
 	void delete(@Param("userId") Integer id);
 	
-	@Modifying
-	@Query("update User u set u.email = :email and u.password = :password where id = :userId")
-	User update(@Param("userId") Integer id, @Param("email") String email, @Param("password") String password);
+	@Query("select u from User u where u.email = :email and u.password = :password")
+	User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 }

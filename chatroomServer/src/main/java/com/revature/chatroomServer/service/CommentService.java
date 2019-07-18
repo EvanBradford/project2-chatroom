@@ -2,8 +2,6 @@ package com.revature.chatroomServer.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.revature.chatroomServer.models.Comments;
 
 public interface CommentService {

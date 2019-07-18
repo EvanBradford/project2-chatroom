@@ -9,55 +9,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.revature.chatroomServer.models.User;
-import com.revature.chatroomServer.service.UserService;
+import com.revature.chatroomServer.models.UserInfo;
+import com.revature.chatroomServer.service.UserInfoService;
 
 @RestController
-@RequestMapping("User")
-public class UserController {
+@RequestMapping("UserInfo")
+public class UserInfoController {
 
 	@Autowired
-	private UserService userService;
+	private UserInfoService userinfoService;
 
 	@PostMapping()
-	public @ResponseBody void register(@RequestBody User user) {
+	public @ResponseBody void register(@RequestBody UserInfo userinfo) {
 		System.out.println("UserController->save");
-		userService.registerUser(user);
+		userinfoService.registerUserInfo(userinfo);
 	}
 
 	@PutMapping("/{id}")
-	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody User user) {
+	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody UserInfo userinfo) {
 		System.out.println("UserController->update" + id);
-		userService.update(user);
+		userinfoService.update(userinfo);
 	}
 
 	@GetMapping()
-	public List<User> list() {
-		List<User> list = userService.list();
+	public List<UserInfo> list() {
+		List<UserInfo> list = userinfoService.list();
 		return list;
 	}
 
 	@GetMapping("/{id}")
-	public User findOne(@PathVariable("id") Integer id) {
-		User user = userService.findOne(id);
+	public UserInfo findOne(@PathVariable("id") Integer id) {
+		UserInfo user = userinfoService.findOne(id);
 		return user;
-	}
-	
-	@PostMapping("/login.do")
-	public User findByEmailAndPassword(@RequestParam("username")String email,@RequestParam("password") String password) {
-		User user = userService.findByEmailAndPassword(email, password);
-	
-		return user;
-		
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Integer id) {
-		userService.delete(id);
+		userinfoService.delete(id);
 	}
 }

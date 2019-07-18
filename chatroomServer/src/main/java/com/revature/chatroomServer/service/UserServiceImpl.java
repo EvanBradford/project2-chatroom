@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 	public void registerUser(User user) {
 		userDAO.save(user);
 	}
+
 	@Transactional
 	public List<User> list() {
 		return userDAO.list();
@@ -35,11 +36,11 @@ public class UserServiceImpl implements UserService {
 	public void delete(Integer id) {
 		userDAO.delete(id);
 	}
+
 	@Override
 	public void update(User user) {
 		userDAO.save(user);
 	}
-<<<<<<< HEAD
 
 	@Transactional
 	public User findByEmailAndPassword(String email, String password) {
@@ -49,6 +50,3 @@ public class UserServiceImpl implements UserService {
 	}
 
 }
-=======
-}
->>>>>>> 91ce420e24215f687491fde8b566b00580dcb438

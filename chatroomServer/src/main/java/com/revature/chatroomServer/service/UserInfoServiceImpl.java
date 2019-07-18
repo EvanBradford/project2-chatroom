@@ -10,32 +10,35 @@ import org.springframework.stereotype.Service;
 import com.revature.chatroomServer.dao.UserInfoDAO;
 import com.revature.chatroomServer.models.UserInfo;
 
+
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
 
 	@Autowired
-	private UserInfoDAO userInfoDAO;// = new UserDAO();
+	private UserInfoDAO userinfoDAO;// = new UserinfoDAO();
 	
 	@Transactional
 	public void registerUserInfo(UserInfo userinfo) {
-		userInfoDAO.save(userinfo);
+		userinfoDAO.save(userinfo);
 	}
+
 	@Transactional
 	public List<UserInfo> list() {
-		return userInfoDAO.list();
+		return userinfoDAO.list();
 	}
 	
 	@Transactional
 	public UserInfo findOne(Integer id) {
-		return userInfoDAO.findOne(id);
+		return userinfoDAO.findOne(id);
 	}
 	
 	@Transactional
 	public void delete(Integer id) {
-		userInfoDAO.delete(id);
+		userinfoDAO.delete(id);
 	}
+
 	@Override
 	public void update(UserInfo userinfo) {
-		userInfoDAO.save(userinfo);
+		userinfoDAO.save(userinfo);
 	}
 }

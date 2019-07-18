@@ -9,55 +9,46 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.revature.chatroomServer.models.User;
-import com.revature.chatroomServer.service.UserService;
+import com.revature.chatroomServer.models.BlockedByUser;
+import com.revature.chatroomServer.service.BlockedByUserService;
 
 @RestController
-@RequestMapping("User")
-public class UserController {
+@RequestMapping("BlockedByUser")
+public class BlockedByUserController {
 
 	@Autowired
-	private UserService userService;
+	private BlockedByUserService blockedByUserService;
 
 	@PostMapping()
-	public @ResponseBody void register(@RequestBody User user) {
+	public @ResponseBody void register(@RequestBody BlockedByUser user) {
 		System.out.println("UserController->save");
-		userService.registerUser(user);
+		blockedByUserService.registerBlockedByUser(user);
 	}
 
 	@PutMapping("/{id}")
-	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody User user) {
+	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody BlockedByUser user) {
 		System.out.println("UserController->update" + id);
-		userService.update(user);
+		blockedByUserService.update(user);
 	}
 
 	@GetMapping()
-	public List<User> list() {
-		List<User> list = userService.list();
+	public List<BlockedByUser> list() {
+		List<BlockedByUser> list = blockedByUserService.list();
 		return list;
 	}
 
 	@GetMapping("/{id}")
-	public User findOne(@PathVariable("id") Integer id) {
-		User user = userService.findOne(id);
+	public BlockedByUser findOne(@PathVariable("id") Integer id) {
+		BlockedByUser user = blockedByUserService.findOne(id);
 		return user;
-	}
-	
-	@PostMapping("/login.do")
-	public User findByEmailAndPassword(@RequestParam("username")String email,@RequestParam("password") String password) {
-		User user = userService.findByEmailAndPassword(email, password);
-	
-		return user;
-		
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Integer id) {
-		userService.delete(id);
+		blockedByUserService.delete(id);
 	}
 }

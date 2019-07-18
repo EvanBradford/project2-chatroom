@@ -9,55 +9,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.revature.chatroomServer.models.User;
-import com.revature.chatroomServer.service.UserService;
+import com.revature.chatroomServer.models.ChannelUsers;
+import com.revature.chatroomServer.service.ChannelUsersService;
 
 @RestController
 @RequestMapping("User")
-public class UserController {
+public class ChannelUsersController {
 
 	@Autowired
-	private UserService userService;
+	private ChannelUsersService channelusersService;
 
 	@PostMapping()
-	public @ResponseBody void register(@RequestBody User user) {
+	public @ResponseBody void register(@RequestBody ChannelUsers user){
 		System.out.println("UserController->save");
-		userService.registerUser(user);
+		channelusersService.registerChannelUsers(user);
 	}
 
 	@PutMapping("/{id}")
-	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody User user) {
+	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody ChannelUsers user) {
 		System.out.println("UserController->update" + id);
-		userService.update(user);
+		channelusersService.update(user);
 	}
 
 	@GetMapping()
-	public List<User> list() {
-		List<User> list = userService.list();
+	public List<ChannelUsers> list() {
+		List<ChannelUsers> list = channelusersService.list();
 		return list;
 	}
 
 	@GetMapping("/{id}")
-	public User findOne(@PathVariable("id") Integer id) {
-		User user = userService.findOne(id);
+	public ChannelUsers findOne(@PathVariable("id") Integer id) {
+		ChannelUsers user = channelusersService.findOne(id);
 		return user;
-	}
-	
-	@PostMapping("/login.do")
-	public User findByEmailAndPassword(@RequestParam("username")String email,@RequestParam("password") String password) {
-		User user = userService.findByEmailAndPassword(email, password);
-	
-		return user;
-		
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Integer id) {
-		userService.delete(id);
+		channelusersService.delete(id);
 	}
 }

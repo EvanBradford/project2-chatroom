@@ -25,7 +25,7 @@ public class CommentController {
 	
 	@PostMapping()
 	public @ResponseBody void register(@RequestBody Comments comment) {
-		System.out.println("UserController->save");
+		System.out.println("CommentController->save");
 		commentService.registerComment(comment);
 	}
 	
