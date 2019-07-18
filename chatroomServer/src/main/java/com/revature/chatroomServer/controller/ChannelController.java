@@ -25,13 +25,13 @@ public class ChannelController {
 
 	@PostMapping()
 	public @ResponseBody void register(@RequestBody Channel channel) {
-		System.out.println("UserController->save");
+		System.out.println("ChannelController->save");
 		channelService.registerChannel(channel);
 	}
 
 	@PutMapping("/{id}")
 	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody Channel channel) {
-		System.out.println("UserController->update" + id);
+		System.out.println("ChannelController->update" + id);
 		channelService.update(channel);
 	}
 
