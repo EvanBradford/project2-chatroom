@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
  import { User } from 'src/app/models/User';
 import { LoginService } from '../../service/login.service';
+import { UserInfo } from 'src/app/models/UserInfo';
+import { UserInfoService } from '../../service/user-info.service';
 
 @Component({
   selector: 'app-user-info',
@@ -17,7 +19,17 @@ export class UserInfoComponent implements OnInit {
   status:1
 
   };
-  constructor(private loginService: LoginService) { }
+
+  userInfo : UserInfo ={
+    nickname:"",
+    birthdate:"",
+    region:"",
+    profilePic:""
+
+  }
+
+   response : any;
+  constructor(private loginService: LoginService, private userService : UserInfoService) { }
 
   ngOnInit() {
   }
@@ -35,15 +47,23 @@ export class UserInfoComponent implements OnInit {
 
 this.loginService.login(this.user.email, this.user.password).subscribe((res)=>{
 console.log(res);
-let response = res;
-console.log(response.aeid);
+
+this.response = res;
+ 
+
+console.log(this.response.aeid);
 const LoggedInUser = JSON.stringify(res);
 sessionStorage.setItem('LoggedInUser', LoggedInUser);
-sessionStorage.setItem('LoggedInId', response.aeid);
+sessionStorage.setItem('LoggedInId', this.response.aeid);
 
-//LoggedInUser = JSON.parse(LoggedInUser);
+
 if (LoggedInUser!='null') {
  console.log('hey you are finally logged in');
+ document.getElementById('userInfo').classList.add('hide');
+ document.getElementById('registerInfo').classList.add('hide');
+ document.getElementById('userDetails').classList.remove('hide');
+ document.getElementById('userDetails').classList.add('show');
+
 } else {
   console.log('no no no you are logged out');
 }

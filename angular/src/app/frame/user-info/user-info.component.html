@@ -24,3 +24,16 @@
       </div>
     </form>
     </div>
+
+    <div id="userDetails" class="hide">
+        <form>
+          <div class="from-group">
+            <label for="usernameField">nickName: </label>
+              <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
+              <label for="passwordField">password:</label>
+              <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
+              <button  id="loginbtn" class="btn btn-warning float-right" (click)="register()">register</button>
+              <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+          </div>
+        </form>
+        </div>
