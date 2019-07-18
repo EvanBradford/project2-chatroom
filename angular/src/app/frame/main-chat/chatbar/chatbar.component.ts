@@ -20,13 +20,13 @@ export class ChatbarComponent implements OnInit {
   ngOnInit() {
   }
 
-//   submitnewComment(){
+  submitnewComment(){
 
-//  this.commentService.submitComment(this.chat.content).subscribe((res)=>{
-//  console.log(res);
+ this.commentService.submitComment(this.chat.content).subscribe((res)=>{
+ console.log(res);
  
-//  });
+ });
  
-//   }
+  }
 
 }

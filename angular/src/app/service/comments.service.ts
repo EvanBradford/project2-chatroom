@@ -17,7 +17,7 @@ export class CommentsService {
 
     let params = { "content":comment, "postDate": date, "user_Id":userId, "channel_Id":"1"};
     console.log(params);
-    return this.http.post(this.serverUrl+'Comment/', params);
+    return this.http.post(this.serverUrl+'Comments/', params);
 
     //ToDo finish off this stuff
   }
