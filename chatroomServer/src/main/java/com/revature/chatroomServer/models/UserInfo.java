@@ -35,6 +35,9 @@ public class UserInfo implements Serializable{
 	
 	@Column(name = "PROFILEPIC")
 	private String profilePic;
+	
+	@Column(name = "USER_INFOID")
+	private int user_InfoId;
 
 	public Integer getInfoid() {
 		return infoid;
@@ -74,6 +77,14 @@ public class UserInfo implements Serializable{
 
 	public void setProfilePic(String profilePic) {
 		this.profilePic = profilePic;
+	}
+	
+	public int getUser_InfoId() {
+		return user_InfoId;
+	}
+
+	public void setUser_InfoId(int user_InfoId) {
+		this.user_InfoId = user_InfoId;
 	}
 
 	@Override
