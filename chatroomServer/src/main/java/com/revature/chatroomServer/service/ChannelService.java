@@ -12,9 +12,11 @@ public interface ChannelService {
 	List<Channel> list();
 	
 	Channel findOne(Integer id);
-
+	
 	void delete(Integer id);
 
 	void update(Channel channel);
 	
+	
+
 }

@@ -31,7 +31,7 @@ public class BlockedByUser implements Serializable {
 	private Integer blockUserId;
 	
 	@Column(name = "AE_ID")
-	private Integer AE_ID;
+	private Integer ae_Id;
 
 	public Integer getBlockId() {
 		return blockId;
@@ -49,19 +49,19 @@ public class BlockedByUser implements Serializable {
 		this.blockUserId = blockUserId;
 	}
 
-	public Integer getAE_ID() {
-		return AE_ID;
+	public Integer getAe_Id() {
+		return ae_Id;
 	}
 
-	public void setAE_ID(Integer aE_ID) {
-		AE_ID = aE_ID;
+	public void setAe_Id(Integer ae_Id) {
+		this.ae_Id = ae_Id;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((AE_ID == null) ? 0 : AE_ID.hashCode());
+		result = prime * result + ((ae_Id == null) ? 0 : ae_Id.hashCode());
 		result = prime * result + ((blockId == null) ? 0 : blockId.hashCode());
 		result = prime * result + ((blockUserId == null) ? 0 : blockUserId.hashCode());
 		return result;
@@ -76,10 +76,10 @@ public class BlockedByUser implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		BlockedByUser other = (BlockedByUser) obj;
-		if (AE_ID == null) {
-			if (other.AE_ID != null)
+		if (ae_Id == null) {
+			if (other.ae_Id != null)
 				return false;
-		} else if (!AE_ID.equals(other.AE_ID))
+		} else if (!ae_Id.equals(other.ae_Id))
 			return false;
 		if (blockId == null) {
 			if (other.blockId != null)
@@ -96,14 +96,14 @@ public class BlockedByUser implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BlockedByUser [blockId=" + blockId + ", blockUserId=" + blockUserId + ", AE_ID=" + AE_ID + "]";
+		return "BlockedByUser [blockId=" + blockId + ", blockUserId=" + blockUserId + ", ae_Id=" + ae_Id + "]";
 	}
 
 	public BlockedByUser(Integer blockId, Integer blockUserId, Integer aE_ID) {
 		super();
 		this.blockId = blockId;
 		this.blockUserId = blockUserId;
-		AE_ID = aE_ID;
+		ae_Id = aE_ID;
 	}
 
 	public BlockedByUser() {

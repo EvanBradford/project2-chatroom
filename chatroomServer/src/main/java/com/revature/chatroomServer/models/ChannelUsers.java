@@ -42,6 +42,14 @@ public class ChannelUsers implements Serializable{
 		this.allowID = allowID;
 	}
 
+	public Integer getBanStatus() {
+		return banStatus;
+	}
+
+	public void setBanStatus(Integer banStatus) {
+		this.banStatus = banStatus;
+	}
+
 	public Integer getAllowedId() {
 		return allowedId;
 	}
