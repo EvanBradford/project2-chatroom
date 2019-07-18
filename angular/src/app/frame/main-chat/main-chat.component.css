@@ -1,10 +1,11 @@
 #overall{
-background-color: #fcf2f2;
-}
-#messagebox{
-    border-top: #85e2e2;
-}
-
-.container{
-    background-color:#f2fcfc;
-}
+    background-color: #fcf2f2;
+    }
+    #messagebox{
+        border-top: #85e2e2;
+        width:100%;
+    }
+    
+    .container{
+        background-color:#f2fcfc;
+    }

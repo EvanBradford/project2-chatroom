@@ -1,11 +1,26 @@
-<div id="userInfo" >
-
-  <div class="from-group">
-    <label for="usernameField">username:</label>    
-      <input style="margin-top: 0;" type="text" id="usernameField" class="form-control inputs" [(ngModel)] = "this.username">
-      <label for="passwordField">password:</label>
-      <input style="margin-top:0"type="password" id="passwordField" class="form-control inputs" [(ngModel)] = "this.password">
-      <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+<div id="userInfo" class="show">
+  <form>
+    <div class="from-group">
+      <label for="usernameField">email: </label>
+        <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
+        <label for="passwordField">password:</label>
+        <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
+        <button  id="loginbtn" class="btn btn-warning float-right" (click)="showRegister()">register</button>
+        <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+    </div>
+  </form>
   </div>
 
-</div>
+  <div id="registerInfo" class="hide">
+    <form>
+      <div class="from-group">
+        <h3>This chattroom is for everyone, so we made it simple for you to sign up! all you need is your email and password, then login</h3>
+        <label for="usernameField">email: </label>
+          <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
+          <label for="passwordField">password:</label>
+          <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
+          <button  id="loginbtn" class="btn btn-warning float-right" (click)="register()">register</button>
+          <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+      </div>
+    </form>
+    </div>

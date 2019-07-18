@@ -1,7 +1,7 @@
-export class User {
-  id: any;
-  email: any;
-  password: any;
-  adminlvl: any;
-  status: any;
+export class User{
+    id:any;
+    email:string;
+    password: any;
+    adminLvl: any;
+    status: any;
 }

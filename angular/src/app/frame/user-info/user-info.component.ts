@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { LogginService } from '../../services/loggin.service';
-import { User } from '../../models/User';
+import { Component, OnInit } from '@angular/core';
+ import { User } from 'src/app/models/User';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-user-info',
@@ -9,25 +9,61 @@ import { User } from '../../models/User';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor(private loginService: LogginService) { }
- user: User;
+  user: User = {
+  id: 0,
+  email: "",
+  password: "",
+  adminLvl: 1,
+  status:1
 
-result: any;
-  @Input()
-  username: string;
+  };
+  constructor(private loginService: LoginService) { }
 
-  @Input()
-  password: string;
-
-  login () {
-    console.log("username", this.username);
-    console.log("password", this.password);
-    this.loginService.login(this.username, this.password).subscribe((res)=>{
-      this.result = res;
-    //  let user = JSON.parse(res);
-    console.log(res);    });
-  }
   ngOnInit() {
   }
+
+  showRegister(){
+    document.getElementById('userInfo').classList.remove('show');
+    document.getElementById('userInfo').classList.add('hide');
+    document.getElementById('registerInfo').classList.remove('hide');
+    document.getElementById('registerInfo').classList.add('show');
+  }
+
+  login() {
+   console.log(this.user.email);
+   console.log(this.user.password);
+
+this.loginService.login(this.user.email, this.user.password).subscribe((res)=>{
+console.log(res);
+let response = res;
+console.log(response.aeid);
+const LoggedInUser = JSON.stringify(res);
+sessionStorage.setItem('LoggedInUser', LoggedInUser);
+sessionStorage.setItem('LoggedInId', response.aeid);
+
+//LoggedInUser = JSON.parse(LoggedInUser);
+if (LoggedInUser!='null') {
+ console.log('hey you are finally logged in');
+} else {
+  console.log('no no no you are logged out');
+}
+});
+
+}
+
+register() {
+  console.log(this.user.email);
+  console.log(this.user.password);
+
+this.loginService.register(this.user.email, this.user.password).subscribe((res)=>{
+console.log(res);
+const LoggedInUser = JSON.stringify(res);
+sessionStorage.setItem('LoggedInUser', LoggedInUser);
+
+});}
+
+
+
+
 
 }
