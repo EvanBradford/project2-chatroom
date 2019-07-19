@@ -24,4 +24,8 @@ export class GuestListComponent implements OnInit {
     this.getUsers();
   }
 
+  // privateChat(id){
+  //   console.log("this works "+id);
+  // }
+
 }
