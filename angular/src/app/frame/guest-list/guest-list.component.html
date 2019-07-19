@@ -1,3 +1,5 @@
 <p>
-  guest-list works!
+    <li *ngFor = "let users of user; let i = index">
+        <span class = "users">{{user[i].email}}</span>
+      </li>
 </p>

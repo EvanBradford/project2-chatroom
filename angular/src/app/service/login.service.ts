@@ -20,12 +20,11 @@ export class LoginService {
   public register(email: string, password:string ){
     let params = { "email":email, "password": password, "adminLvl":"1", "status":"1"};
     console.log(params);
-    return this.http.post(this.serverUrl+'User/', params);
+    return this.http.post(this.serverUrl + 'User/', params);
   }
 
   public getAll(){
-    return this.http.get(this.serverUrl+'User/');
-      }
-      
+    return this.http.get(this.serverUrl + 'User/');
   }
+}
 

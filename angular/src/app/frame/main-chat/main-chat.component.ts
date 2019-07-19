@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommentsService } from '../../service/comments.service';
+import { Comments } from 'src/app/models/Comments';
 
 @Component({
   selector: 'app-main-chat',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainChatComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commentService: CommentsService) {}
+
+  comment: any;
+
+  getComments() {
+    this.commentService.listComments().subscribe((res)=>{
+      console.log(res);
+      this.comment = res;
+      console.log(this.comment[1].content);
+    });
+  }
 
   ngOnInit() {
+    this.getComments();
   }
 
 }

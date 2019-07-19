@@ -21,4 +21,7 @@ export class CommentsService {
 
     //ToDo finish off this stuff
   }
+  public listComments(){
+    return this.http.get(this.serverUrl+'Comments/');
+  }
 }
