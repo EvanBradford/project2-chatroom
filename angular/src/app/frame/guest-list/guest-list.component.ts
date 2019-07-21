@@ -29,7 +29,7 @@ export class GuestListComponent implements OnInit {
   privateChat(pmed_id){
     this.newChannel.startPM(pmed_id).subscribe((res)=>{});
     
-    
+   sessionStorage.setItem('Pm_Id', pmed_id);
   }
 
   getUsers() {

@@ -25,6 +25,12 @@ export class ChannelService {
     return this.http.post(this.serverUrl + 'Channel/' , params);
   }
 
+  public getChannelByID(): Observable<any>{
+    let ae_id = sessionStorage.getItem("LoggedInId");
+    console.log(ae_id);
+    return this.http.get(this.serverUrl + 'Channel/' +ae_id);
+  }
+
 
   
 

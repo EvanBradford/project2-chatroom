@@ -1,2 +1,4 @@
 <div id="privateChat" class="show"> <input type="text" class="form-control inputs" required name="username"
-  [(ngModel)]="comment.content"> </div>
+  [(ngModel)]="comment.content" (keyup.enter)="submitnewComment(comment.content)"> </div>
+
+  
