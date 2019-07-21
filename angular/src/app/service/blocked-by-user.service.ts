@@ -25,6 +25,7 @@ console.log(ae_id);
 public getBlockedList (): Observable<any>{
   let ae_id = sessionStorage.getItem("LoggedInId");
   console.log(ae_id);
+  
   return this.http.get<any>(this.serverUrl + 'BlockedByUser/' + ae_id);
 }
 

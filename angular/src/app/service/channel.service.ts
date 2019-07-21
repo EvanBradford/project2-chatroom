@@ -13,5 +13,18 @@ export class ChannelService {
   constructor(private http:HttpClient) { }
 
 
+
+  public startPM (pmed_id:any): Observable<any>{
+    let ae_id = sessionStorage.getItem("LoggedInId");
+    console.log(ae_id);
+    let params =  {	"channelName": "pm"+","+ae_id +","+pmed_id,
+    "channelType": ae_id}
+    
+    return this.http.post(this.serverUrl + 'Channel/' , params);
+  }
+
+
+  
+
   
 }

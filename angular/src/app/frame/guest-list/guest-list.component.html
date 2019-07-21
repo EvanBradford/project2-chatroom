@@ -1,5 +1,5 @@
 <div id="friends">
     <li *ngFor = "let users of user; let i = index">
-        <span class = "users">{{user[i].email}}</span><button (click)="privateChat(user[i].aeid)">block</button>
+        <span (click)="privateChat(user[i].aeid)" class = "users">{{user[i].email}}</span><button (click)="block(user[i].aeid)">block</button>
       </li>
 </div>

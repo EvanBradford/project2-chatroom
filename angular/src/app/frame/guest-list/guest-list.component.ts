@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { users } from 'src/app/models/User';
 import { LoginService } from '../../service/login.service';
 import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
-
+import { ChannelService } from '../../service/channel.service';
 
 @Component({
   selector: 'app-guest-list',
@@ -11,7 +11,7 @@ import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
 })
 export class GuestListComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private blockService: BlockedByUserService) { }
+  constructor(private loginService: LoginService, private blockService: BlockedByUserService, private newChannel : ChannelService) { }
 
   user: any;
 
@@ -26,8 +26,9 @@ export class GuestListComponent implements OnInit {
 });
   }
 
-  startPM(){
-    
+  privateChat(pmed_id){
+    this.newChannel.startPM(pmed_id).subscribe((res)=>{});
+   // this.
   }
 
   getUsers() {
@@ -40,7 +41,7 @@ export class GuestListComponent implements OnInit {
     this.getUsers();
   }
 
-  privateChat(id){
+  block(id){
     this.blockService.block(id).subscribe((res) => {
       console.log(res);
     });
