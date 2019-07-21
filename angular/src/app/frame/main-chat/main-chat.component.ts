@@ -17,12 +17,17 @@ export class MainChatComponent implements OnInit {
     this.commentService.listComments().subscribe((res)=>{
       console.log(res);
       this.comment = res;
-      console.log(this.comment[1].content);
     });
   }
+ 
+
+x:any;
 
   ngOnInit() {
+    
     this.getComments();
+    this.x = setInterval(() => { this.getComments(); }, 1000);
   }
 
+  
 }

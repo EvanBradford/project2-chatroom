@@ -9,3 +9,9 @@
     .container{
         background-color:#f2fcfc;
     }
+
+    .listforcomments{
+        background-color:aliceblue;
+        border: top 6;
+        border:red;
+    }

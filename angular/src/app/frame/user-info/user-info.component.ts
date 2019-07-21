@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login.service';
 import { UserInfo } from 'src/app/models/UserInfo';
 import { UserInfoService } from '../../service/user-info.service';
+import { BnNgIdleService } from 'bn-ng-idle';
+
 
 @Component({
   selector: 'app-user-info',
@@ -25,47 +27,68 @@ export class UserInfoComponent implements OnInit {
     birthdate:"",
     region:"",
     profilePic:""
-
   }
 
    response : any;
-  constructor(private loginService: LoginService, private userService : UserInfoService) { }
+  constructor(private loginService: LoginService, private userService : UserInfoService,private bnIdle: BnNgIdleService) { }
 
   ngOnInit() {
+    sessionStorage.setItem('LoggedInUser', '');
+sessionStorage.setItem('LoggedInId', '0' );
   }
 
-  showRegister(){
-    document.getElementById('userInfo').classList.remove('show');
-    document.getElementById('userInfo').classList.add('hide');
-    document.getElementById('registerInfo').classList.remove('hide');
-    document.getElementById('registerInfo').classList.add('show');
-  }
 
   login() {
    console.log(this.user.email);
    console.log(this.user.password);
+   document.getElementById('usernameField').classList.remove('shake');
+  document.getElementById('passwordField').classList.remove('shake');
 
 this.loginService.login(this.user.email, this.user.password).subscribe((res)=>{
 console.log(res);
 
+if(res == null){
+  document.getElementById('usernameField').classList.add('shake');
+  document.getElementById('passwordField').classList.add('shake');
+  this.user.email="";
+  this.user.password="";
+  console.log('no no no you are logged out');
+
+}
+
+
 this.response = res;
  
 
-console.log(this.response.aeid);
+let aeid = this.response.aeid;
 const LoggedInUser = JSON.stringify(res);
 sessionStorage.setItem('LoggedInUser', LoggedInUser);
 sessionStorage.setItem('LoggedInId', this.response.aeid);
 
 
-if (LoggedInUser!='null') {
+if (aeid>0) {
  console.log('hey you are finally logged in');
- document.getElementById('userInfo').classList.add('hide');
- document.getElementById('registerInfo').classList.add('hide');
- document.getElementById('userDetails').classList.remove('hide');
- document.getElementById('userDetails').classList.add('show');
+ 
+ document.getElementById('userInfo').classList.add('colorfade4');
+ document.getElementById('emailLabel').innerText='nickname';
+ document.getElementById('passwordLabel').innerText='image link';
+ document.getElementById('loginbtn').classList.remove('show');
+ document.getElementById('registerbtn').classList.remove('show');
+ document.getElementById('loginbtn').classList.add('hide');
+ document.getElementById('registerbtn').classList.add('hide');
 
+
+
+ 
 } else {
+  document.getElementById('usernameField').classList.add('shake');
+  document.getElementById('passwordField').classList.add('shake');
+  this.user.email="";
+  this.user.password="";
   console.log('no no no you are logged out');
+
+
+
 }
 });
 
@@ -74,13 +97,29 @@ if (LoggedInUser!='null') {
 register() {
   console.log(this.user.email);
   console.log(this.user.password);
-
+  document.getElementById('usernameField').classList.remove('shake');
+  document.getElementById('passwordField').classList.remove('shake');
+  document.getElementById('registerbtn').classList.remove('show');
+  document.getElementById('registerbtn').classList.add('hide');
+try{
 this.loginService.register(this.user.email, this.user.password).subscribe((res)=>{
 console.log(res);
-const LoggedInUser = JSON.stringify(res);
-sessionStorage.setItem('LoggedInUser', LoggedInUser);
+if(res==null){
+  document.getElementById('registerbtn').classList.remove('show');
+  document.getElementById('registerbtn').classList.add('hide');
+}else{
+  document.getElementById('emailLabel').innerText='if you need to reset your password click here';
+  document.getElementById('recoverbtn').classList.remove('hide');
+  document.getElementById('recoverbtn').classList.add('show');
+}
 
-});}
+});} catch (err) {
+console.log('this doesn work');
+document.getElementById('emailLabel').innerText='if you need to reset your password click here';
+document.getElementById('recoverbtn').classList.remove('hide');
+document.getElementById('recoverbtn').classList.add('show');
+}}
+
 
 
 

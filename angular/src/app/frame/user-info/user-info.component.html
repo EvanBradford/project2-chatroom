@@ -1,39 +1,13 @@
 <div id="userInfo" class="show">
   <form>
     <div class="from-group">
-      <label for="usernameField">email: </label>
-        <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
-        <label for="passwordField">password:</label>
-        <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
-        <button  id="loginbtn" class="btn btn-warning float-right" (click)="showRegister()">register</button>
-        <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
+      <label id="emailLabel"for="usernameField">email: </label><span id="resetbtn" class="float-right hide"><button class="btn btn-sm btn-danger">reset Password</button></span>
+        <input  type="email" id="usernameField" class="form-control inputs" required name="username" [(ngModel)]="user.email">  
+        <label id="passwordLabel" for="passwordField">password:</label>
+        <input type="password" id="passwordField" class="form-control inputs" required name="password" [(ngModel)] = "user.password">
+       <div id="loginbtn" class="show"> <button   class="btn btn-warning float-right" (click)="login()">login</button></div>
+        <div id="registerbtn" class="show"><button class="btn btn-info float-right" (click)="register()">register</button></div>
+        <div id="updatebtn" class="hide"><button class="btn btn-warning float-right" (click)="updateInfo()">update</button></div>
     </div>
   </form>
   </div>
-
-  <div id="registerInfo" class="hide">
-    <form>
-      <div class="from-group">
-        <h3>This chattroom is for everyone, so we made it simple for you to sign up! all you need is your email and password, then login</h3>
-        <label for="usernameField">email: </label>
-          <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
-          <label for="passwordField">password:</label>
-          <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
-          <button  id="loginbtn" class="btn btn-warning float-right" (click)="register()">register</button>
-          <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
-      </div>
-    </form>
-    </div>
-
-    <div id="userDetails" class="hide">
-        <form>
-          <div class="from-group">
-            <label for="usernameField">nickName: </label>
-              <input  type="email" id="usernameField" class="form-control inputs" name="username" [(ngModel)]="user.email">  
-              <label for="passwordField">password:</label>
-              <input type="password" id="passwordField" class="form-control inputs" name="password" [(ngModel)] = "user.password">
-              <button  id="loginbtn" class="btn btn-warning float-right" (click)="register()">register</button>
-              <button  id="loginbtn" class="btn btn-warning float-right" (click)="login()">loggin</button>
-          </div>
-        </form>
-        </div>

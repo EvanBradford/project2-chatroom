@@ -1,7 +1,7 @@
 <div id="overall" class="container">
   <div class="row" id="overall"><p>
-    <li *ngFor = "let comments of comment; let i = index">
-    <span class = "comments">{{comment[i].content}}</span>
+    <li class="listforcomments" *ngFor = "let comments of comment; let i = index">
+   <span>{{comment[i].user_Id}}&nbsp;&nbsp;&nbsp;</span> <span class = "comments">{{comment[i].content}}</span>
   </li></p></div>
  <div class="row" id="messagebox" > <app-chatbar></app-chatbar></div>   
 </div>

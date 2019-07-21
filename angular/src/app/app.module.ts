@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 
 
+import { BnNgIdleService } from 'bn-ng-idle';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrameComponent } from './frame/frame.component';
@@ -12,6 +14,7 @@ import { UserInfoComponent } from './frame/user-info/user-info.component';
 import { GuestListComponent } from './frame/guest-list/guest-list.component';
 import { PrivateMessageComponent } from './frame/private-message/private-message.component';
 import { ChatbarComponent } from './frame/main-chat/chatbar/chatbar.component';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +30,10 @@ import { ChatbarComponent } from './frame/main-chat/chatbar/chatbar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [BnNgIdleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
