@@ -28,8 +28,8 @@ public class BlockedByUserServiceImpl implements BlockedByUserService {
 	}
 	
 	@Transactional
-	public BlockedByUser findOne(Integer id) {
-		return blockedbyuserDAO.findOne(id);
+	public List<BlockedByUser> findBlocked(Integer id) {
+		return blockedbyuserDAO.findBlocked(id);
 	}
 	
 	@Transactional

@@ -43,9 +43,9 @@ public class BlockedByUserController {
 	}
 
 	@GetMapping("/{id}")
-	public BlockedByUser findOne(@PathVariable("id") Integer id) {
-		BlockedByUser user = blockedByUserService.findOne(id);
-		return user;
+	public List<BlockedByUser> findBlocked(@PathVariable("id") Integer id) {
+		List<BlockedByUser> users = blockedByUserService.findBlocked(id);
+		return users;
 	}
 
 	@DeleteMapping("/{id}")
