@@ -74,10 +74,10 @@ export class UserInfoComponent implements OnInit {
         document.getElementById('imageurl').classList.add('show');
         document.getElementById('loginbtn').classList.remove('show');
         document.getElementById('registerbtn').classList.remove('show');
-        document.getElementById('updatebtn').classList.remove('show');
+        document.getElementById('updatebtn').classList.remove('hide');
         document.getElementById('loginbtn').classList.add('hide');
         document.getElementById('registerbtn').classList.add('hide');
-        document.getElementById('updatebtn').classList.add('hide');
+        document.getElementById('updatebtn').classList.add('show');
       } else {
         document.getElementById('usernameField').classList.add('shake');
         document.getElementById('passwordField').classList.add('shake');
@@ -101,8 +101,6 @@ export class UserInfoComponent implements OnInit {
       if (res == null) {
         document.getElementById('registerbtn').classList.remove('show');
         document.getElementById('registerbtn').classList.add('hide');
-        document.getElementById('updatebtn').classList.remove('hide');
-        document.getElementById('updatebtn').classList.add('show');
       } else {
         document.getElementById('emailLabel').innerText = 'If you need to reset your password click here';
         document.getElementById('recoverbtn').classList.remove('hide');
