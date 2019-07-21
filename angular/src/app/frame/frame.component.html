@@ -2,13 +2,13 @@
 
 
   <div class="col-sm-8" id="left">
-      <app-main-chat></app-main-chat>
-      <app-user-info></app-user-info>
+      <div id="chatroom"><app-main-chat></app-main-chat></div>
+      <div class="row" id="myInfo"> <app-user-info></app-user-info></div>
   </div>   
 
   <div class="col-sm-4" id="right">
-      <app-guest-list></app-guest-list>
-      <app-private-message></app-private-message>
+      <div><app-guest-list></app-guest-list></div>
+      <div class="row"> <app-private-message></app-private-message></div>
  </div>
 
 

@@ -61,6 +61,8 @@ body, html {
   border-color: #4ac7c2;
   border-width: 3px;
   padding: 0;
+  overflow:scroll;
+    height:65vh;
 }
 
 ::-webkit-scrollbar {
