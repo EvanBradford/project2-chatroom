@@ -4,6 +4,7 @@ import { LoginService } from '../../service/login.service';
 import { UserInfo } from 'src/app/models/UserInfo';
 import { UserInfoService } from '../../service/user-info.service';
 import { BnNgIdleService } from 'bn-ng-idle';
+import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
 
 
 @Component({
@@ -30,7 +31,11 @@ export class UserInfoComponent implements OnInit {
   }
 
    response : any;
-  constructor(private loginService: LoginService, private userService : UserInfoService,private bnIdle: BnNgIdleService) { }
+  constructor(private loginService: LoginService, private userService : UserInfoService,private bnIdle: BnNgIdleService, private blockedBy: BlockedByUserService) { }
+
+
+
+
 
   ngOnInit() {
     sessionStorage.setItem('LoggedInUser', '');
@@ -91,7 +96,7 @@ if (aeid>0) {
 
 
 
- 
+
 } else {
   document.getElementById('usernameField').classList.add('shake');
   document.getElementById('passwordField').classList.add('shake');

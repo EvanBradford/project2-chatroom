@@ -15,6 +15,17 @@ export class GuestListComponent implements OnInit {
 
   user: any;
 
+  getBlocked(){
+ this.blockService.getBlockedList().subscribe((res)=>{
+  console.log(res);
+  console.log("you need to finish the blocked list in the user info part");
+  console.log("that means filtering the response so that its only the blocked by id part");
+  let list = res;
+  sessionStorage.setItem('blockedList', list );
+
+});
+  }
+
   getUsers() {
     this.loginService.getAll().subscribe((res) => {
       this.user = res;
