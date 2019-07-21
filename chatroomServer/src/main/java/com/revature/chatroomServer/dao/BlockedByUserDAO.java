@@ -18,8 +18,8 @@ public interface BlockedByUserDAO extends JpaRepository<BlockedByUser,Integer>{
 	@Query("select u from BlockedByUser u")
 	List<BlockedByUser> list();
 	
-	@Query("select u from BlockedByUser u where u.id = :userId")
-	List<BlockedByUser> findBlocked(@Param("userId") Integer id);
+	@Query("select u from BlockedByUser u where u.ae_Id = :ae_Id")
+	List<BlockedByUser> findBlocked(@Param("ae_Id") Integer id);
 
 	@Modifying
 	@Query("delete from BlockedByUser where id = :userId")
