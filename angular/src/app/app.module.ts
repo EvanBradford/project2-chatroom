@@ -14,6 +14,7 @@ import { UserInfoComponent } from './frame/user-info/user-info.component';
 import { GuestListComponent } from './frame/guest-list/guest-list.component';
 import { PrivateMessageComponent } from './frame/private-message/private-message.component';
 import { ChatbarComponent } from './frame/main-chat/chatbar/chatbar.component';
+import { ChatDetailComponent } from './frame/private-message/chat-detail/chat-detail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ChatbarComponent } from './frame/main-chat/chatbar/chatbar.component';
     UserInfoComponent,
     GuestListComponent,
     PrivateMessageComponent,
-    ChatbarComponent
+    ChatbarComponent,
+    ChatDetailComponent
   ],
   imports: [
     BrowserModule,

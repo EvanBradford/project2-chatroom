@@ -19,6 +19,8 @@ export class ChannelService {
     console.log(ae_id);
     let params =  {	"channelName": "pm"+","+ae_id +","+pmed_id,
     "channelType": ae_id}
+
+    console.log(params);
     
     return this.http.post(this.serverUrl + 'Channel/' , params);
   }

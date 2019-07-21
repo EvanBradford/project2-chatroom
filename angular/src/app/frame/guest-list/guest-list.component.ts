@@ -28,7 +28,8 @@ export class GuestListComponent implements OnInit {
 
   privateChat(pmed_id){
     this.newChannel.startPM(pmed_id).subscribe((res)=>{});
-   // this.
+    
+    
   }
 
   getUsers() {
