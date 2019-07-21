@@ -40,12 +40,18 @@ public class ChannelController {
 		List<Channel> list = channelService.list();
 		return list;
 	}
-
-	@GetMapping("/{id}")
-	public Channel findOne(@PathVariable("id") Integer id) {
-		Channel channel = channelService.findOne(id);
-		return channel;
+	
+	@GetMapping("/{type}")
+	public List<Channel> listByType(@PathVariable("type") Integer type) {
+		List<Channel> channels = channelService.listByType(type);
+		return channels;
 	}
+
+//	@GetMapping("/{id}")
+//	public Channel findOne(@PathVariable("id") Integer id) {
+//		Channel channel = channelService.findOne(id);
+//		return channel;
+//	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Integer id) {
