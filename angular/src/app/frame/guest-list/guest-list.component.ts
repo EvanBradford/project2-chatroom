@@ -26,6 +26,10 @@ export class GuestListComponent implements OnInit {
 });
   }
 
+  startPM(){
+    
+  }
+
   getUsers() {
     this.loginService.getAll().subscribe((res) => {
       this.user = res;
