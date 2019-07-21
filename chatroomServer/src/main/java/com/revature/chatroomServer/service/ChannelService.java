@@ -13,6 +13,8 @@ public interface ChannelService {
 	
 	Channel findOne(Integer id);
 	
+	List<Channel> listByType(Integer type);
+	
 	void delete(Integer id);
 
 	void update(Channel channel);

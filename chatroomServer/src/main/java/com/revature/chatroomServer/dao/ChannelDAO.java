@@ -20,6 +20,9 @@ public interface ChannelDAO extends JpaRepository<Channel,Integer>{
 	
 	@Query("select u from Channel u where u.id = :channelId")
 	Channel findOne(@Param("channelId") Integer id);
+	
+	@Query("select u from Channel u where u.channelType = :channelType")
+	List<Channel> listByType(@Param("channelType") Integer channelType);
 
 	@Modifying
 	@Query("delete from Channel where id = :channelId")
