@@ -12,22 +12,16 @@ export class MainChatComponent implements OnInit {
   constructor(private commentService: CommentsService) {}
 
   comment: any;
+  x: any;
 
   getComments() {
-    this.commentService.listComments().subscribe((res)=>{
+    this.commentService.listComments().subscribe((res) => {
       console.log(res);
       this.comment = res;
     });
   }
- 
-
-x:any;
-
   ngOnInit() {
-    
     this.getComments();
     this.x = setInterval(() => { this.getComments(); }, 1000);
   }
-
-  
 }

@@ -10,4 +10,12 @@
           width: 0px;
           background: transparent; /* make scrollbar transparent */
       }
+    li
+	{
+        list-style-type: none;
+		padding:8px;
+		color: black;
+		background-color: lightgreen;
+        margin:5px;
+	}
     
