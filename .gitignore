@@ -13,6 +13,12 @@ target/
 .springBeans
 .sts4-cache
 
+### angular ###
+/node_modules/
+angular/node_modules
+*/node_modules
+
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
