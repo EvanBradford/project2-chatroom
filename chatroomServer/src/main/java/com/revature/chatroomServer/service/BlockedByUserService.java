@@ -11,7 +11,7 @@ public interface BlockedByUserService {
 
 	List<BlockedByUser> list();
 	
-	BlockedByUser findOne(Integer id);
+	List<BlockedByUser> findBlocked(Integer id);
 	
 	void delete(Integer id);
 
