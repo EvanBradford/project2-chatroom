@@ -33,11 +33,16 @@ public class ChannelServiceImpl implements ChannelService {
 	}
 	
 	@Transactional
+	public List<Channel> listByType(Integer type) {
+		return channelDAO.listByType(type);
+	}
+	
+	@Transactional
 	public void delete(Integer id) {
 		channelDAO.delete(id);
 	}
 
-	@Override
+	@Transactional
 	public void update(Channel channel) {
 		channelDAO.save(channel);
 	}
