@@ -15,12 +15,13 @@ package com.revature.chatroomServer;
 //public class ChatroomServerApplicationTests {
 //
 //	
-//	  @Autowired private User user;
+//	  private User user;
 //	  
-//	  @Autowired UserController control;
+//	  UserController control;
 //	  
-//	  @Test public void addUser() { user.setAdminLvl(1);
-//	  user.setEmail("evan.bradford1@gmail.com"); user.setPassword("12345");
+//	  @Test 
+//	  public void register() {
+//	  user.setEmail("evan.bradford2@gmail.com"); user.setPassword("12345");
 //	  user.setStatus(1);
 //	  
 //	  control.register(user); }

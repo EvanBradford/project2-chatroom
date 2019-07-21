@@ -25,9 +25,16 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping()
-	public @ResponseBody void register(@RequestBody User user) {
+	public @ResponseBody String register(@RequestBody User user) {
 		System.out.println("UserController->save");
-		userService.registerUser(user);
+		try { userService.registerUser(user);
+		
+		return "great";} catch (Exception e)
+		
+		 {
+			return "nope";
+		}
+		
 	}
 
 	@PutMapping("/{id}")

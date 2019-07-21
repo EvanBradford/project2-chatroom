@@ -32,6 +32,7 @@ public class BlockedByUserController {
 	@PutMapping("/{id}")
 	public @ResponseBody void update(@PathVariable("id") Integer id,@RequestBody BlockedByUser user) {
 		System.out.println("UserController->update" + id);
+		user.setAe_Id(id);//this is what takes the set ID value
 		blockedByUserService.update(user);
 	}
 
