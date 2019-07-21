@@ -35,12 +35,14 @@ body, html {
   background-color: #FC6E51;
   text-align: center;
   height:100%;
+  width:80%;
 }
 
 #right {
   height:100%;
   background-color: #4FC1E9;
   text-align: center;
+  width:35%;
 }
 
 
@@ -89,6 +91,7 @@ body, html {
   border-color: #4a8ec7;
   padding: 0;
   border-width: 3px;
+  width:100%;
 }
 
 #privateMessage {

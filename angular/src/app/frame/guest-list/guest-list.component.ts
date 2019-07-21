@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { users } from 'src/app/models/User';
 import { LoginService } from '../../service/login.service';
+import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { LoginService } from '../../service/login.service';
 })
 export class GuestListComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private blockService: BlockedByUserService) { }
 
   user: any;
 
@@ -24,8 +25,11 @@ export class GuestListComponent implements OnInit {
     this.getUsers();
   }
 
-  // privateChat(id){
-  //   console.log("this works "+id);
-  // }
+  privateChat(id){
+    this.blockService.block(id).subscribe((res) => {
+      console.log(res);
+    });
+    console.log("this works "+id);
+  }
 
 }

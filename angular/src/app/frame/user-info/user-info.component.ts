@@ -72,6 +72,18 @@ if (aeid>0) {
  document.getElementById('userInfo').classList.add('colorfade4');
  document.getElementById('emailLabel').innerText='nickname';
  document.getElementById('passwordLabel').innerText='image link';
+ 
+ document.getElementById('usernameField').classList.add('hide');
+ document.getElementById('usernameField').classList.remove('show');
+ document.getElementById('nicknameField').classList.remove('hide');
+ document.getElementById('nicknameField').classList.add('show');
+
+ document.getElementById('passwordField').classList.add('hide');
+ document.getElementById('passwordField').classList.remove('show');
+ document.getElementById('imageurl').classList.remove('hide');
+ document.getElementById('imageurl').classList.add('show');
+ 
+
  document.getElementById('loginbtn').classList.remove('show');
  document.getElementById('registerbtn').classList.remove('show');
  document.getElementById('loginbtn').classList.add('hide');
