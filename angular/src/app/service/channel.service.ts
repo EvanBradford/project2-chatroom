@@ -31,6 +31,10 @@ export class ChannelService {
     return this.http.get(this.serverUrl + 'Channel/' +ae_id);
   }
 
+  public getChannels(): Observable<any>{
+    return this.http.get(this.serverUrl + 'Channel/');
+  }
+
 
   
 

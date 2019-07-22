@@ -4,6 +4,7 @@ import { LoginService } from '../../service/login.service';
 import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
 import { ChannelService } from '../../service/channel.service';
 
+
 @Component({
   selector: 'app-guest-list',
   templateUrl: './guest-list.component.html',
@@ -14,6 +15,28 @@ export class GuestListComponent implements OnInit {
   constructor(private loginService: LoginService, private blockService: BlockedByUserService, private newChannel : ChannelService) { }
 
   user: any;
+   arr21 =[];
+
+getPMed(){
+  this.newChannel.getChannels().subscribe((res)=>{
+let b = res;
+console.log(b);
+let i= 0;
+let userId = sessionStorage.getItem("LoggedInId");
+  for (i = 0; i < b.length; i++) { 
+    if (b[i].channelName.startsWith('pm,'+userId)){
+        this.arr21.push(b[i].channelId,b[i].channelName, 'mine');
+    }
+   
+ }
+ for (i = 0; i < b.length; i++) { 
+    if (b[i].channelName.endsWith(','+userId)){
+        this.arr21.push(b[i].channelId,b[i].channelName, 'theres');
+    }
+   
+ }
+});}
+
 
   getBlocked(){
  this.blockService.getBlockedList().subscribe((res)=>{
