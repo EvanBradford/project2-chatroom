@@ -13,9 +13,10 @@ import { ChannelService } from '../../service/channel.service';
 export class GuestListComponent implements OnInit {
 
   constructor(private loginService: LoginService, private blockService: BlockedByUserService, private newChannel : ChannelService) { }
-
+userList:any;
   user: any;
    arr21 =[];
+  counter=0;
 
 getPMed(){
   this.newChannel.getChannels().subscribe((res)=>{
@@ -25,13 +26,19 @@ let i= 0;
 let userId = sessionStorage.getItem("LoggedInId");
   for (i = 0; i < b.length; i++) { 
     if (b[i].channelName.startsWith('pm,'+userId)){
-        this.arr21.push(b[i].channelId,b[i].channelName, 'mine');
+      let war = 'pm,'+userId+','
+      let end = war.length;
+      let staruser = b[i].channelName.slice(end);
+        this.arr21.push(staruser);
     }
    
  }
  for (i = 0; i < b.length; i++) { 
     if (b[i].channelName.endsWith(','+userId)){
-        this.arr21.push(b[i].channelId,b[i].channelName, 'theres');
+      let end = ','+userId;
+      let war = end.length;
+      let staruser = b[i].channelName.slice(0,war);
+        this.arr21.push(staruser);
     } 
  }
 });
@@ -49,14 +56,26 @@ console.log(this.arr21);
 let i=0;
 let j=0;
 
-  for (i = 0; i < this.user.length; i++) { 
+  for (i = 0; i < this.userList.length; i++) { 
     for (j =0; j < list.length; j++ ){
-    if (this.user[i].aeid == list[j].blockUserId){
-      this.user.filter(d=> d.aeid == list[j].blockUserId);
+      console.log('it should do this a couple of times');
+    if ( this.userList[i].aeid == list[j].blockUserId){
+      this.userList.splice(i,1);
     }}
     }
-   console.log("this is the blocked usrs?")
- console.log(this.user);
+   console.log("this is the good usr?")
+   console.log(this.userList);
+
+   if (this.counter == 0){
+     this.user = this.userList;
+     this.counter++;
+   } else{
+     if (this.user != this.userList){
+this.user=this.userList;
+     }
+    
+   }
+
 
 
  // this.user.filter()
@@ -64,8 +83,39 @@ let j=0;
 });
   }
 
+privateChannels=[];
+
   privateChat(pmed_id){
-    this.newChannel.startPM(pmed_id).subscribe((res)=>{});
+let userId = sessionStorage.getItem("LoggedInId")
+    this.newChannel.getChannels().subscribe((res)=>{
+      let channels = res;
+      console.log("these are the channels")
+      console.log(channels);
+      
+      for (let i =0; i < channels.length; i++){
+      if (channels[i].channelName.startsWith("pm,"+pmed_id) 
+      || channels[i].channelName.endsWith(","+pmed_id)){
+        this.privateChannels.push(channels[i].channelId)
+        
+      }
+      
+
+    }
+
+  console.log(this.privateChannels)
+  console.log("this is the big thing");
+  let chatID = Math.max(...this.privateChannels);
+    let chatId = chatID.toString();
+    console.log(chatID);
+if (chatId == "-Infinity"){
+  this.newChannel.startPM(pmed_id).subscribe((res)=>{});
+  this.privateChat(pmed_id);
+}else{
+  sessionStorage.setItem("CurrentPM", chatId);
+}
+  
+  });
+
     
    sessionStorage.setItem('Pm_Id', pmed_id);
   }
@@ -75,8 +125,8 @@ let j=0;
     let userID = parseInt(userId);
     if (userID > 0){
     this.loginService.getAll().subscribe((res) => {
-      this.user = res;
-      console.log(this.user);
+      this.userList = res;
+      console.log(this.userList);
     });
   }
   this.getBlocked();
@@ -89,7 +139,7 @@ let j=0;
 
   ngOnInit() {
     
-    this.x = setInterval(() => { this.getUsers(); }, 1500);
+    this.x = setInterval(() => { this.getUsers(); }, 5000);
   }
 
   block(id){

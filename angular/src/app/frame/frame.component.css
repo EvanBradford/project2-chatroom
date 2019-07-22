@@ -79,7 +79,7 @@ body, html {
 
 #friends {
   border-style: solid;
-  border-color: #4ac784;
+  border-color: #185f39;
   padding: 0;
   border-width: 3px;
   overflow:   scroll;
@@ -99,7 +99,7 @@ body, html {
 
 #privateMessage {
   border-style: solid;
-  border-color: #c74a4f;
+  border-color: #18c99d;
   padding: 0;
   border-width: 3px;
   height: 35vh;

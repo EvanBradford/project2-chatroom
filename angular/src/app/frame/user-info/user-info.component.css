@@ -1,18 +1,18 @@
 #userInfo{
     background-color:#fcf7f2;
-    height:99%;
-    width:312%;
+    height:90%;
+    width:65vw;
     margin: 2px;
 }
 
 #loginbtn{
     margin-right:10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #registerbtn{
     margin-right:10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .inputs{ 
@@ -20,5 +20,4 @@
 margin-top:0;
   width:90%;
  
-
 }

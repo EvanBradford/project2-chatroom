@@ -39,4 +39,11 @@ export class CommentsService {
   public listComments(){
     return this.http.get(this.serverUrl+'Comments/');
   }
+
+  public listPMComments(){
+    let channelId = sessionStorage.getItem('CurrentPM');
+
+    return this.http.get(this.serverUrl+'Comments/'+ channelId);
+
+  }
 }

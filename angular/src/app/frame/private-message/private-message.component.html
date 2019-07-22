@@ -1,6 +1,10 @@
 <div id="pmContainer">
 
-  <div style="height:84%; background-color:beige"></div>
+  <div style="height:84%; background-color:beige"><p>
+    <li class="listforcomments" *ngFor = "let comments of comment; let i = index">
+   <span>{{comment[i].user_Id}}&nbsp;&nbsp;&nbsp;</span>
+    <span class = "comments">{{comment[i].content}}</span>
+  </li></p></div> -->
 
   <div id="privateBar" class="position-relative botton"><app-chat-detail></app-chat-detail></div>
 </div>
