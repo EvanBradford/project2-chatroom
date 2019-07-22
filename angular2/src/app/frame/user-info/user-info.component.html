@@ -1,0 +1,24 @@
+<div id="userInfo" class="show">
+  <form>
+    <div class="from-group">
+      <label id="emailLabel" for="usernameField">email: </label><span id="resetbtn" class="float-right hide"><button
+          class="btn btn-sm btn-danger">reset Password</button></span>
+      <div id="usernameField" class="show"> <input type="email" class="form-control inputs" required name="username"
+          [(ngModel)]="user.email"> </div>
+      <div id="nicknameField" class="hide"> <input type="text" class="form-control inputs" required name="username"
+          [(ngModel)]="user.email"> </div>
+
+      <label id="passwordLabel" for="passwordField">password:</label>
+      <div id="passwordField" class="show"> <input type="password" class="form-control inputs" required name="password"
+          [(ngModel)]="user.password"></div>
+      <div id="imageurl" class="hide"> <input type="password" class="form-control inputs" required name="password"
+          [(ngModel)]="user.password"></div>
+      <div id="loginbtn" class="show"> <button class="btn btn-warning float-right" (click)="login()">login</button>
+      </div>
+      <div id="registerbtn" class="show"><button class="btn btn-info float-right" (click)="register()">register</button>
+      </div>
+      <div id="updatebtn" class="hide"><button class="btn btn-warning float-right"
+          (click)="updateInfo()">update</button></div>
+    </div>
+  </form>
+</div>

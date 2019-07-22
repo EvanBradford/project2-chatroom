@@ -1,0 +1,25 @@
+#overall{
+    background-color: #fcf2f2;
+    }
+    #messagebox{
+        border-top: #85e2e2;
+        width:100%;
+    }
+    
+    .container{
+        background-color:#f2fcfc;
+    }
+
+    .listforcomments{
+        background-color:aliceblue;
+        border: top 6;
+        border:red;
+    }
+	li
+	{
+        list-style-type: none;
+		padding:8px;
+		color: black;
+		background-color: darkblue;
+        margin:5px;
+	}

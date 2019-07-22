@@ -1,0 +1,106 @@
+:root {
+  --main-chat-border: #4ac7c2;
+  --main-friends-border: #4ac784;
+  --main-myInfo-border: #4a8ec7;
+  --main-privateMessage-border: #c74a4f;
+}
+
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+
+@media (min-width: 768px){
+  #left {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    overflow-y: scroll; 
+  }
+  
+  #right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    width: 25%;
+  }
+}
+
+#left {
+  background-color: #FC6E51;
+  text-align: center;
+  height:100%;
+  width:80%;
+}
+
+#right {
+  height:100%;
+  background-color: #4FC1E9;
+  text-align: center;
+  width:35%;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.containers {
+  margin-right:1%;
+  margin-left:2%;
+  width: 96%;
+
+}
+
+#chatroom {
+  border-style: solid;
+  border-color: #4ac7c2;
+  border-width: 3px;
+  padding: 0;
+  overflow:scroll;
+    height:65vh;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+#toprow{
+  overflow:scroll;
+    height:65vh;
+    
+}
+
+#friends {
+  border-style: solid;
+  border-color: #185f39;
+  padding: 0;
+  border-width: 3px;
+  overflow:   scroll;
+  height:65vh;
+}
+
+#myInfo {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #c227ba;
+  padding: 0;
+  border-width: 4.5px;
+  width:100%;
+  height: 35vh;
+  margin : 3px;
+}
+
+#privateMessage {
+  border-style: solid;
+  border-color: #18c99d;
+  padding: 0;
+  border-width: 3px;
+  height: 35vh;
+}
