@@ -20,6 +20,8 @@ userList:any;
   counter=0;
   notificationList:any;
 
+  pmcounter=0;
+
 getPMed(){
   this.arr21 = [];
   this.newChannel.getChannels().subscribe((res)=>{
@@ -50,26 +52,16 @@ let userId = sessionStorage.getItem("LoggedInId");
 
 console.log("this is the NOTIFICATION LIST");
 console.log(this.arr21);
-if (this.arr22 != this.arr21){
- this.arr22 = (this.arr21);
-console.log(this.arr22);
-console.log("THIS SHOULD BE TRUE")
-let a = this.arr21.includes(this.user[1].aeid);
-console.log("this is the type of array that arr2 is "+ typeof this.arr22)
-console.log("this is what you get when you type in user.aeid" + this.user[1].aeid);
-console.log("maybe if i do it this way" + this.arr22);
+if (this.pmcounter == 0){
+ this.arr22 = this.arr21;
+ this.pmcounter++}
+ else{
+   if(this.arr21 != this.arr22){
+     this.arr22 = this.arr21;
+   }
+ }
 
-let b = this.arr22.includes(this.user[3].aeid);
-console.log(this.user[3].aeid);
-console.log(typeof this.arr22);
-console.log(this.arr22[1]);
-console.log(a);
-console.log(b);
-
-  
-
-
-}}
+}
 
 
   getBlocked(){
