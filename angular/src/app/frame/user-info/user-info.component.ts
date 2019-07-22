@@ -115,4 +115,10 @@ export class UserInfoComponent implements OnInit {
       document.getElementById('recoverbtn').classList.add('show');
     }
   }
+  update() {
+    console.log(this.userInfo.nickname);
+    console.log(this.userInfo.profilePic);
+    document.getElementById('nicknameField').classList.add('shake');
+    document.getElementById('imageurl').classList.add('shake');
+  }
 }
