@@ -78,7 +78,6 @@ let j=0;
       this.userList.splice(i,1);
     }}
     }
-   console.log("this is the good usr?")
    console.log(this.userList);
 
    if (this.counter == 0){
