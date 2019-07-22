@@ -16,9 +16,12 @@ export class GuestListComponent implements OnInit {
 userList:any;
   user: any;
    arr21 =[];
+   arr22 = [];
   counter=0;
+  notificationList:any;
 
 getPMed(){
+  this.arr21 = [];
   this.newChannel.getChannels().subscribe((res)=>{
 let b = res;
 console.log(b);
@@ -29,7 +32,8 @@ let userId = sessionStorage.getItem("LoggedInId");
       let war = 'pm,'+userId+','
       let end = war.length;
       let staruser = b[i].channelName.slice(end);
-        this.arr21.push(staruser);
+      let intusers = parseInt(staruser);
+        this.arr21.push(intusers);
     }
    
  }
@@ -38,19 +42,39 @@ let userId = sessionStorage.getItem("LoggedInId");
       let end = ','+userId;
       let war = end.length;
       let staruser = b[i].channelName.slice(0,war);
-        this.arr21.push(staruser);
+      let intusers = parseInt(staruser);
+        this.arr21.push(intusers);
     } 
  }
 });
 
+console.log("this is the NOTIFICATION LIST");
 console.log(this.arr21);
+if (this.arr22 != this.arr21){
+ this.arr22 = (this.arr21);
+console.log(this.arr22);
+console.log("THIS SHOULD BE TRUE")
+let a = this.arr21.includes(this.user[1].aeid);
+console.log("this is the type of array that arr2 is "+ typeof this.arr22)
+console.log("this is what you get when you type in user.aeid" + this.user[1].aeid);
+console.log("maybe if i do it this way" + this.arr22);
 
-}
+let b = this.arr22.includes(this.user[3].aeid);
+console.log(this.user[3].aeid);
+console.log(typeof this.arr22);
+console.log(this.arr22[1]);
+console.log(a);
+console.log(b);
+
+  
+
+
+}}
 
 
   getBlocked(){
  this.blockService.getBlockedList().subscribe((res)=>{
-  console.log(res);
+console.log(res);
   let list = res;
   sessionStorage.setItem('blockedList', list );
 let i=0;
@@ -58,7 +82,6 @@ let j=0;
 
   for (i = 0; i < this.userList.length; i++) { 
     for (j =0; j < list.length; j++ ){
-      console.log('it should do this a couple of times');
     if ( this.userList[i].aeid == list[j].blockUserId){
       this.userList.splice(i,1);
     }}
@@ -87,27 +110,28 @@ privateChannels=[];
 
   privateChat(pmed_id){
 let userId = sessionStorage.getItem("LoggedInId")
+
+if (userId == '0'){
+  return ;
+}
+
     this.newChannel.getChannels().subscribe((res)=>{
       let channels = res;
-      console.log("these are the channels")
-      console.log(channels);
+     
       
       for (let i =0; i < channels.length; i++){
-      if (channels[i].channelName.startsWith("pm,"+pmed_id) 
-      || channels[i].channelName.endsWith(","+pmed_id)){
-        this.privateChannels.push(channels[i].channelId)
-        
-      }
-      
-
+      if (channels[i].channelName == ("pm,"+pmed_id+","+userId) 
+      || channels[i].channelName == ("pm,"+userId+","+pmed_id)){
+        this.privateChannels.push(channels[i].channelId); 
+      }    
     }
 
-  console.log(this.privateChannels)
   console.log("this is the big thing");
   let chatID = Math.max(...this.privateChannels);
     let chatId = chatID.toString();
-    console.log(chatID);
-if (chatId == "-Infinity"){
+   console.log("this is what chat id should equal: ")
+    console.log(chatId);
+if (chatId == '-Infinity'){
   this.newChannel.startPM(pmed_id).subscribe((res)=>{});
   this.privateChat(pmed_id);
 }else{
@@ -126,11 +150,10 @@ if (chatId == "-Infinity"){
     if (userID > 0){
     this.loginService.getAll().subscribe((res) => {
       this.userList = res;
-      console.log(this.userList);
     });
   }
   this.getBlocked();
-
+this.getPMed();
 
 }
 

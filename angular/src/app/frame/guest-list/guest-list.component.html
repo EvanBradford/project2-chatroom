@@ -1,5 +1,7 @@
 <div id="friends">
     <li *ngFor = "let users of user; let i = index">
-        <span (click)="privateChat(user[i].aeid)" class = "users">{{user[i].email}}</span><button (click)="block(user[i].aeid)">block</button>
+        <span (click)="privateChat(user[i].aeid)" class = "users">{{user[i].email}}<div *ngIf="arr22.includes(user[i].aeid)">!</div></span>
+-
+        <button (click)="block(user[i].aeid)">block</button>
       </li>
 </div>
