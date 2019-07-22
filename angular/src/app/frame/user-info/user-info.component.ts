@@ -7,6 +7,7 @@ import { BnNgIdleService } from 'bn-ng-idle';
 import { BlockedByUserService } from 'src/app/service/blocked-by-user.service';
 
 
+
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -32,10 +33,6 @@ export class UserInfoComponent implements OnInit {
 
    response : any;
   constructor(private loginService: LoginService, private userService : UserInfoService,private bnIdle: BnNgIdleService, private blockedBy: BlockedByUserService) { }
-
-
-
-
 
   ngOnInit() {
     sessionStorage.setItem('LoggedInUser', '');
@@ -87,14 +84,11 @@ if (aeid>0) {
  document.getElementById('passwordField').classList.remove('show');
  document.getElementById('imageurl').classList.remove('hide');
  document.getElementById('imageurl').classList.add('show');
- 
 
  document.getElementById('loginbtn').classList.remove('show');
  document.getElementById('registerbtn').classList.remove('show');
  document.getElementById('loginbtn').classList.add('hide');
  document.getElementById('registerbtn').classList.add('hide');
-
-
 
 
 } else {

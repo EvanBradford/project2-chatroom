@@ -34,16 +34,32 @@ let userId = sessionStorage.getItem("LoggedInId");
         this.arr21.push(b[i].channelId,b[i].channelName, 'theres');
     } 
  }
-});}
+});
+
+console.log(this.arr21);
+
+}
 
 
   getBlocked(){
  this.blockService.getBlockedList().subscribe((res)=>{
   console.log(res);
-  console.log("you need to finish the blocked list in the user info part");
-  console.log("that means filtering the response so that its only the blocked by id part");
   let list = res;
   sessionStorage.setItem('blockedList', list );
+let i=0;
+let j=0;
+
+  for (i = 0; i < this.user.length; i++) { 
+    for (j =0; j < list.length; j++ ){
+    if (this.user[i].aeid == list[j].blockUserId){
+      this.user.filter(d=> d.aeid == list[j].blockUserId);
+    }}
+    }
+   console.log("this is the blocked usrs?")
+ console.log(this.user);
+
+
+ // this.user.filter()
 
 });
   }
@@ -55,15 +71,25 @@ let userId = sessionStorage.getItem("LoggedInId");
   }
 
   getUsers() {
+    let userId = sessionStorage.getItem('LoggedInId');
+    let userID = parseInt(userId);
+    if (userID > 0){
     this.loginService.getAll().subscribe((res) => {
       this.user = res;
       console.log(this.user);
     });
   }
+  this.getBlocked();
+
+
+}
+
+
+  x;
+
   ngOnInit() {
-    this.getUsers();
-    this.getPMed();
-    this.getBlocked();
+    
+    this.x = setInterval(() => { this.getUsers(); }, 1500);
   }
 
   block(id){
