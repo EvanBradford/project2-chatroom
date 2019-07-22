@@ -32,8 +32,7 @@ let userId = sessionStorage.getItem("LoggedInId");
  for (i = 0; i < b.length; i++) { 
     if (b[i].channelName.endsWith(','+userId)){
         this.arr21.push(b[i].channelId,b[i].channelName, 'theres');
-    }
-   
+    } 
  }
 });}
 
@@ -63,6 +62,8 @@ let userId = sessionStorage.getItem("LoggedInId");
   }
   ngOnInit() {
     this.getUsers();
+    this.getPMed();
+    this.getBlocked();
   }
 
   block(id){
